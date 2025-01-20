@@ -3,6 +3,7 @@
 import 'package:firebase_core/firebase_core.dart' show FirebaseOptions;
 import 'package:flutter/foundation.dart'
     show defaultTargetPlatform, kIsWeb, TargetPlatform;
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 /// Default [FirebaseOptions] for use with your Firebase apps.
 ///
@@ -49,24 +50,24 @@ class DefaultFirebaseOptions {
     }
   }
 
-  static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyBBgC1Vq2d9dYonoNVdkkwMI1tZQmpK0ek',
-    appId: '1:131857091064:android:1d58319fe32520d6bbae0d',
-    messagingSenderId: '131857091064',
-    projectId: 'task-app-3fbc8',
-    databaseURL: 'https://task-app-3fbc8-default-rtdb.firebaseio.com',
-    storageBucket: 'task-app-3fbc8.appspot.com',
+  static FirebaseOptions get android => FirebaseOptions(
+    apiKey: dotenv.env['ANDROID_API_KEY'] ?? '',
+    appId: dotenv.env['ANDROID_APP_ID'] ?? '',
+    messagingSenderId: dotenv.env['ANDROID_MESSAGING_SENDER_ID'] ?? '',
+    projectId: dotenv.env['ANDROID_PROJECT_ID'] ?? '',
+    databaseURL: dotenv.env['ANDROID_DATABASE_URL'] ?? '',
+    storageBucket: dotenv.env['ANDROID_STORAGE_BUCKET'] ?? '',
   );
 
-  static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyACac0oTRdHy_MWSTkiT6392DmNf0tB_xQ',
-    appId: '1:131857091064:ios:00778f148bd0e880bbae0d',
-    messagingSenderId: '131857091064',
-    projectId: 'task-app-3fbc8',
-    databaseURL: 'https://task-app-3fbc8-default-rtdb.firebaseio.com',
-    storageBucket: 'task-app-3fbc8.appspot.com',
-    androidClientId: '131857091064-v60385bkfu0of8uqomcqhq4f3ubpiosq.apps.googleusercontent.com',
-    iosClientId: '131857091064-9uupv9r2rsa9bti5d0l86f2bg309en8g.apps.googleusercontent.com',
-    iosBundleId: 'com.example.shopzen',
+  static FirebaseOptions get ios => FirebaseOptions(
+    apiKey: dotenv.env['IOS_API_KEY'] ?? '',
+    appId: dotenv.env['IOS_APP_ID'] ?? '',
+    messagingSenderId: dotenv.env['IOS_MESSAGING_SENDER_ID'] ?? '',
+    projectId: dotenv.env['IOS_PROJECT_ID'] ?? '',
+    databaseURL: dotenv.env['IOS_DATABASE_URL'] ?? '',
+    storageBucket: dotenv.env['IOS_STORAGE_BUCKET'] ?? '',
+    androidClientId: dotenv.env['IOS_ANDROID_CLIENT_ID'] ?? '',
+    iosClientId: dotenv.env['IOS_CLIENT_ID'] ?? '',
+    iosBundleId: dotenv.env['IOS_BUNDLE_ID'] ?? '',
   );
 }
