@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "131857091064",
+    "firebase_url": "https://task-app-3fbc8-default-rtdb.firebaseio.com",
+    "project_id": "task-app-3fbc8",
+    "storage_bucket": "task-app-3fbc8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:131857091064:android:1d58319fe32520d6bbae0d",
+        "android_client_info": {
+          "package_name": "com.example.shopzen"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "131857091064-uk6njva7bsou4ns88ln7tnd4dasq0f3c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBBgC1Vq2d9dYonoNVdkkwMI1tZQmpK0ek"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "131857091064-uk6njva7bsou4ns88ln7tnd4dasq0f3c.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "131857091064-uuq4i6t569jntcubvclh4dpumhdgccqg.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.learnApp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
