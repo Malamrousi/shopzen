@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shopzen/core/app/env_variables.dart';
 
 class ShopZenApp extends StatelessWidget {
   const ShopZenApp({super.key});
@@ -6,7 +7,7 @@ class ShopZenApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
+      debugShowCheckedModeBanner: EnvVariables.instance.debugMode,
       title: 'ShopZen',
       home: Scaffold(
         appBar: AppBar(
