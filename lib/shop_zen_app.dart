@@ -4,6 +4,7 @@ import 'package:shopzen/core/routes/route_name.dart';
 import 'package:shopzen/core/routes/routing.dart';
 import 'package:shopzen/core/screens/no_network_screen.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:shopzen/core/utils/styles/themes/app_theme.dart';
 
 class ShopZenApp extends StatelessWidget {
   const ShopZenApp({super.key});
@@ -20,10 +21,7 @@ class ShopZenApp extends StatelessWidget {
             child: MaterialApp(
               title: 'ShopZen',
               debugShowCheckedModeBanner: false,
-              theme: ThemeData(
-                colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-                useMaterial3: true,
-              ),
+              theme: themeLight(),
               builder: (context, widget) {
                 return Scaffold(
                   body: Builder(
@@ -34,6 +32,7 @@ class ShopZenApp extends StatelessWidget {
                   ),
                 );
               },
+              
              onGenerateRoute:generateRoute ,
              initialRoute: RouteName.onBoarding,
             ),
