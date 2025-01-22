@@ -5,12 +5,34 @@ import 'package:shopzen/core/utils/styles/themes/image_extension.dart';
 
 ThemeData themeDark() {
   return ThemeData(
-      scaffoldBackgroundColor: ColorsManger.blackColor,
-      extensions: const <ThemeExtension<dynamic>>[ColorExtension.darkColor , ImageExtension.darkColor]);
+    scaffoldBackgroundColor: ColorsManger.blackColor,
+    extensions: const <ThemeExtension<dynamic>>[
+      ColorExtension.darkColor,
+      ImageExtension.darkColor
+    ],
+    useMaterial3: true,
+    textTheme: TextTheme(
+      displaySmall: TextStyle(
+        color: ColorsManger.whiteColor,
+     
+      ),
+    ),
+  );
 }
 
 ThemeData themeLight() {
   return ThemeData(
       scaffoldBackgroundColor: ColorsManger.whiteColor,
-      extensions: const <ThemeExtension<dynamic>>[ColorExtension.lightColor , ImageExtension.lightColor]);
+      extensions: const <ThemeExtension<dynamic>>[
+        ColorExtension.lightColor,
+        ImageExtension.lightColor
+      ],
+      useMaterial3: true,
+      textTheme: TextTheme(
+        displaySmall: TextStyle(
+          color: ColorsManger.blackColor,
+       
+        ),
+      ),
+      );
 }

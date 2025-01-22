@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class PageSlideTransition extends PageRouteBuilder {
   final dynamic page;
 
-  PageSlideTransition(this.page)
+  PageSlideTransition({required this.page})
       : super(
             pageBuilder: (context, animation, secondaryAnimation) => page,
             transitionsBuilder:

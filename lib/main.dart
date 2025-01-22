@@ -1,8 +1,11 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:shopzen/core/app/bloc_observer.dart';
 import 'package:shopzen/core/app/env_variables.dart';
 import 'package:shopzen/core/di/di.dart';
+import 'package:shopzen/core/shared_pref/shared_pref.dart';
 import 'package:shopzen/firebase_options.dart';
 import 'package:shopzen/shop_zen_app.dart';
 
@@ -12,7 +15,8 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-
+  await SharedPref().instantiatePreferences();
+ Bloc.observer = AppBlocObserver();
   setupDependencies();
   await SystemChrome.setPreferredOrientations(
     [DeviceOrientation.portraitDown, DeviceOrientation.portraitUp],

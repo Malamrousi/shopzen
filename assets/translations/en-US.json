@@ -3,6 +3,12 @@
     "login": "Login",
     "email": "Email",
     "password": "Password",
-    "register": "Register"
+    "register": "Register",
+    "welcome_to_shop_zen": "Welcome to ShopZen",
+    "you_are_one_stop_destination_for_hassle_free_online_shopping": "You are one-stop destination for hassle-free online shopping",
+    "get_started": "Get Started",
+    "language": "Language",
+    "arabic": "Arabic",
+    "english": "English"
 
 }

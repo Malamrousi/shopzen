@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class PageSizeTransition extends PageRouteBuilder {
   final dynamic page;
 
-  PageSizeTransition(this.page)
+  PageSizeTransition({required this.page})
       : super(
             pageBuilder: (context, animation, secondaryAnimation) => page,
             transitionsBuilder:
