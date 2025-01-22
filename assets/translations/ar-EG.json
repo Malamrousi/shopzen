@@ -3,5 +3,12 @@
     "login": "تسجيل الدخول",
     "email": "البريد الالكتروني",
     "password": "كلمة المرور",
-    "register": "تسجيل"
+    "register": "تسجيل",
+    "welcome_to_shop_zen": "مرحبا بك في متجر زين",
+    "you_are_one_stop_destination_for_hassle_free_online_shopping": "أنت في وجهة واحدة للتسوق على الانترنت بدون مشاكل",
+    "get_started": "ابدأ",
+    "language": "اللغة",
+    "arabic": "العربية",
+    "english": "الانجليزية"
+
 }

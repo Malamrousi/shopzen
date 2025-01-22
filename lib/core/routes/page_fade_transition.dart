@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class PageFadeTransition extends PageRouteBuilder {
   final dynamic page;
 
-  PageFadeTransition(this.page)
+  PageFadeTransition({required this.page})
       : super(
             pageBuilder: (context, animation, secondaryAnimation) => page,
             transitionsBuilder:

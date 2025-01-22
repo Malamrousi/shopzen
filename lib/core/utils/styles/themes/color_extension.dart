@@ -23,6 +23,6 @@ class ColorExtension extends ThemeExtension<ColorExtension> {
     return ColorExtension(mainColor: Color.lerp(mainColor, other.mainColor, t));
   }
 
-  static const  ColorExtension lightColor = ColorExtension(mainColor: ColorsManger.whiteColor);
-  static const ColorExtension darkColor = ColorExtension(mainColor: ColorsManger.blackColor); 
+  static const  ColorExtension lightColor = ColorExtension(mainColor: ColorsManger.blackColor);
+  static const ColorExtension darkColor = ColorExtension(mainColor: ColorsManger.whiteColor); 
 }
