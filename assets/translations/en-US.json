@@ -13,6 +13,9 @@
     "login_with_email": "Login with Email",
     "register_with_email": "Register with Email",
     "enter_email": "Enter Your Email",    
-    "enter_password": "Enter Password"
+    "enter_password": "Enter Password",
+    "dont_have_an_account": "Don't have an account? ",
+    "have_an_account": "Have an account? ",
+    "signup": "Sign Up"
 
 }

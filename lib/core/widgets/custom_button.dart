@@ -11,7 +11,7 @@ class CustomButton extends StatelessWidget {
       this.textStyle,
       this.bottomHeight,
       this.bottomWidth,
-      this.borderColor});
+      this.borderColor, this.backgroundColor});
   final double? borderRadius;
 
   final String title;
@@ -21,6 +21,7 @@ class CustomButton extends StatelessWidget {
   final double? bottomWidth;
 
   final Color? borderColor;
+  final Color? backgroundColor;
 
   @override
   Widget build(BuildContext context) {
@@ -28,12 +29,12 @@ class CustomButton extends StatelessWidget {
       style: ButtonStyle(
         fixedSize: WidgetStatePropertyAll<Size>(
             Size(bottomWidth ?? double.maxFinite, bottomHeight ?? 48.h)),
-        backgroundColor: const WidgetStatePropertyAll<Color>(
-          ColorsManger.primaryColor700),
+        backgroundColor:  WidgetStatePropertyAll<Color>(
+       backgroundColor ??   ColorsManger.primaryColor700),
         shape: WidgetStatePropertyAll(
           RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(borderRadius ?? 8.r),
-            side: BorderSide(color: borderColor ?? ColorsManger.primaryColor700),
+            side: BorderSide(color: borderColor ?? Colors.transparent ),
           ),
         ),
       ),

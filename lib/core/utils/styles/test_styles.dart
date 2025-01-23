@@ -27,7 +27,7 @@ class AppTestStyles {
   static TextStyle font16Regular(BuildContext context) => TextStyle(
         fontSize: 16.sp,
         fontWeight: FontWeightManger.regular,
-        color: ColorsManger.whiteColor,
+        color: ColorsManger.gray50,
         fontFamily: FontFamily.getFontFamily(),
       );
   static TextStyle font20Regular(BuildContext context) => TextStyle(
@@ -41,6 +41,12 @@ class AppTestStyles {
         fontSize: 16.sp,
         fontWeight: FontWeightManger.medium,
         color: context.colorThemeExtension.mainColor,
+        fontFamily: FontFamily.getFontFamily(),
+      );
+       static TextStyle font16MediumPrimary700(BuildContext context) => TextStyle(
+        fontSize: 16.sp,
+        fontWeight: FontWeightManger.medium,
+        color: ColorsManger.primaryColor700,
         fontFamily: FontFamily.getFontFamily(),
       );
 }
