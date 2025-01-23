@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:shopzen/core/app/app_context.dart';
 import 'package:shopzen/core/app/app_localizations.dart';
 
 import 'package:shopzen/core/cubit/app_cubit/app_cubit.dart';
@@ -41,6 +42,7 @@ class ShopZenApp extends StatelessWidget {
                   final cubit = context.read<AppCubit>();
                   return MaterialApp(
                     title: 'ShopZen',
+                    navigatorKey: AppContext.navigatorKey,
                     debugShowCheckedModeBanner: false,
                     theme: cubit.isDark ? themeLight() : themeDark(),
                     locale: Locale(cubit.currentLangCode),
