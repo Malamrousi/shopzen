@@ -41,6 +41,7 @@ class ShopZenApp extends StatelessWidget {
                   final cubit = context.read<AppCubit>();
                   return MaterialApp(
                     title: 'ShopZen',
+        
                     debugShowCheckedModeBanner: false,
                     theme: cubit.isDark ? themeLight() : themeDark(),
                     locale: Locale(cubit.currentLangCode),

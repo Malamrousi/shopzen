@@ -46,7 +46,7 @@ class OnBoardingViewBody extends StatelessWidget {
                   context.pushNamed(RouteName.login);
                  },
                  title: "get_started".tr(context),
-                 textStyle: AppTestStyles.font20Bold(context),
+                 textStyle: AppTestStyles.font20BoldWhiteColor( context),
                )
              ],
            ),

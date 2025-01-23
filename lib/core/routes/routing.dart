@@ -4,6 +4,7 @@ import 'package:shopzen/core/routes/page_slide_transition.dart';
 import 'package:shopzen/core/routes/route_name.dart';
 import 'package:shopzen/core/screens/under_build_screen.dart';
 import 'package:shopzen/features/auth/presentation/view/login_screen.dart';
+import 'package:shopzen/features/auth/presentation/view/sign_up_screen.dart';
 import 'package:shopzen/features/on_boarding/presentation/view/on_boarding_screen.dart';
 
 Route<dynamic> generateRoute(RouteSettings settings) {
@@ -15,6 +16,10 @@ Route<dynamic> generateRoute(RouteSettings settings) {
          case RouteName.login:
       return  PageSlideTransition(
         page:  const LoginScreen(),
+      );
+           case RouteName.signUp:
+      return  BaseRoute(
+        page:  const SignUpScreen(),
       );
     default:
       return MaterialPageRoute(builder: (_) => PageUnderBuildScreen());

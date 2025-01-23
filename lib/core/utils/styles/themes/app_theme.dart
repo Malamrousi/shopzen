@@ -3,6 +3,8 @@ import 'package:shopzen/core/utils/styles/colors_manger.dart';
 import 'package:shopzen/core/utils/styles/themes/color_extension.dart';
 import 'package:shopzen/core/utils/styles/themes/image_extension.dart';
 
+import '../../font_family.dart';
+
 ThemeData themeDark() {
   return ThemeData(
     scaffoldBackgroundColor: ColorsManger.blackColor,
@@ -13,8 +15,8 @@ ThemeData themeDark() {
     useMaterial3: true,
     textTheme: TextTheme(
       displaySmall: TextStyle(
-        color: ColorsManger.whiteColor,
-     
+        color: ColorsManger.blackColor,
+      fontFamily: FontFamily.getFontFamily(),
       ),
     ),
   );
@@ -31,7 +33,7 @@ ThemeData themeLight() {
       textTheme: TextTheme(
         displaySmall: TextStyle(
           color: ColorsManger.blackColor,
-       
+        fontFamily: FontFamily.getFontFamily(),
         ),
       ),
       );
