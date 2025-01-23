@@ -5,19 +5,20 @@ import 'package:shopzen/core/app/app_regex.dart';
 import 'package:shopzen/core/helper/spacing.dart';
 import 'package:shopzen/core/routes/route_name.dart';
 import 'package:shopzen/core/utils/styles/colors_manger.dart';
-import 'package:shopzen/core/utils/styles/test_styles.dart';
 import 'package:shopzen/core/widgets/app_text_form_filed.dart';
 import 'package:shopzen/core/widgets/custom_button.dart';
 import 'package:shopzen/features/auth/presentation/view/widgets/custom_text_rich.dart';
 
-class LoginViewBody extends StatefulWidget {
-  const LoginViewBody({super.key});
+import '../../../../../core/utils/styles/test_styles.dart';
+
+class SignUpViewBody extends StatefulWidget {
+  const SignUpViewBody({super.key});
 
   @override
-  State<LoginViewBody> createState() => _LoginViewBodyState();
+  State<SignUpViewBody> createState() => _SignUpViewBodyState();
 }
 
-class _LoginViewBodyState extends State<LoginViewBody> {
+class _SignUpViewBodyState extends State<SignUpViewBody> {
   bool isObscureText = true;
   @override
   Widget build(BuildContext context) {
@@ -27,7 +28,7 @@ class _LoginViewBodyState extends State<LoginViewBody> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            "login_with_email".tr(context),
+            "sign_up_with_email".tr(context),
             style: AppTestStyles.font20Bold(context),
           ),
           verticalSpacing(48),
@@ -57,17 +58,18 @@ class _LoginViewBodyState extends State<LoginViewBody> {
           AppTextFormFiled(
             isObscureText: isObscureText,
             suffixIcon: GestureDetector(
-                onTap: () {
-                  setState(() {
-                    isObscureText = !isObscureText;
-                  });
-                },
-                child: Icon(
-                  isObscureText
-                      ? Icons.visibility_off_outlined
-                      : Icons.visibility_outlined,
-                  color: ColorsManger.gray600,
-                )),
+              onTap: () {
+                setState(() {
+                  isObscureText = !isObscureText;
+                });
+              },
+              child: Icon(
+                isObscureText
+                    ? Icons.visibility_off_outlined
+                    : Icons.visibility_outlined,
+                color: ColorsManger.gray600,
+              ),
+            ),
             controller: TextEditingController(),
             hintText: "enter_password".tr(context),
             validator: (value) {
@@ -82,16 +84,16 @@ class _LoginViewBodyState extends State<LoginViewBody> {
           verticalSpacing(78),
           CustomButton(
             onPressed: () {},
-            title: "login".tr(context),
+            title: "signup".tr(context),
             backgroundColor: ColorsManger.primaryColor400,
             textStyle: AppTestStyles.font16Regular(context),
           ),
           Spacer(),
           Center(
             child: CustomTextRich(
-              routeName: RouteName.signUp,
-              tittle: "dont_have_an_account".tr(context),
-              authText: "signup".tr(context),
+                  routeName: RouteName.login,
+              tittle: "have_an_account".tr(context),
+              authText: "login".tr(context),
             ),
           ),
           verticalSpacing(78),

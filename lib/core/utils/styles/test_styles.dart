@@ -18,9 +18,9 @@ class AppTestStyles {
         color: context.colorThemeExtension.mainColor,
         fontFamily: FontFamily.getFontFamily(),
       );
-  static TextStyle font20Bold(BuildContext context) => TextStyle(
+  static TextStyle font20BoldWhiteColor(BuildContext context) => TextStyle(
         fontSize: 18.sp,
-        fontWeight: FontWeightManger.medium,
+        fontWeight: FontWeightManger.bold,
         color: ColorsManger.whiteColor,
         fontFamily: FontFamily.getFontFamily(),
       );
@@ -30,9 +30,9 @@ class AppTestStyles {
         color: ColorsManger.gray50,
         fontFamily: FontFamily.getFontFamily(),
       );
-  static TextStyle font20Regular(BuildContext context) => TextStyle(
+  static TextStyle font20Bold(BuildContext context) => TextStyle(
         fontSize: 24.sp,
-        fontWeight: FontWeightManger.regular,
+        fontWeight: FontWeightManger.bold,
         color: context.colorThemeExtension.mainColor,
         fontFamily: FontFamily.getFontFamily(),
       );
