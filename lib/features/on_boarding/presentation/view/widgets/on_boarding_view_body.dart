@@ -32,13 +32,13 @@ class OnBoardingViewBody extends StatelessWidget {
                Text(
                  "welcome_to_shop_zen".tr(context),
                  textAlign: TextAlign.center,
-                 style: AppTestStyles.font30Bold,
+                 style: AppTestStyles.font30Bold(context),
                ),
                verticalSpacing(8),
                Text(
                  "you_are_one_stop_destination_for_hassle_free_online_shopping".tr(context),
                  textAlign: TextAlign.center,
-                 style: AppTestStyles.font18Bold
+                 style: AppTestStyles.font18Bold(context),
                ),
                verticalSpacing(63),
                CustomButton(
@@ -46,7 +46,7 @@ class OnBoardingViewBody extends StatelessWidget {
                   context.pushNamed(RouteName.login);
                  },
                  title: "get_started".tr(context),
-                 textStyle: AppTestStyles.font20Bold,
+                 textStyle: AppTestStyles.font20Bold( context),
                )
              ],
            ),

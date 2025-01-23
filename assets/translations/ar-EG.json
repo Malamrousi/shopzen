@@ -9,6 +9,10 @@
     "get_started": "ابدأ",
     "language": "اللغة",
     "arabic": "العربية",
-    "english": "الانجليزية"
+    "english": "الانجليزية",
+    "login_with_email": "تسجيل الدخول بالبريد الالكتروني",
+    "register_with_email": "تسجيل بالبريد الالكتروني",
+    "enter_email": "ادخل البريد الالكتروني",
+    "enter_password": "ادخل كلمة المرور"
 
 }

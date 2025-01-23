@@ -9,6 +9,10 @@
     "get_started": "Get Started",
     "language": "Language",
     "arabic": "Arabic",
-    "english": "English"
+    "english": "English",
+    "login_with_email": "Login with Email",
+    "register_with_email": "Register with Email",
+    "enter_email": "Enter Your Email",    
+    "enter_password": "Enter Password"
 
 }

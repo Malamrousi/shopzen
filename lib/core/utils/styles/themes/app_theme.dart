@@ -15,7 +15,7 @@ ThemeData themeDark() {
     useMaterial3: true,
     textTheme: TextTheme(
       displaySmall: TextStyle(
-        color: ColorsManger.whiteColor,
+        color: ColorsManger.blackColor,
       fontFamily: FontFamily.getFontFamily(),
       ),
     ),
