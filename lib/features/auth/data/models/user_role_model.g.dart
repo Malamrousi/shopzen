@@ -12,8 +12,3 @@ UserRoleModel _$UserRoleModelFromJson(Map<String, dynamic> json) =>
       userId: (json['id'] as num?)?.toInt(),
     );
 
-Map<String, dynamic> _$UserRoleModelToJson(UserRoleModel instance) =>
-    <String, dynamic>{
-      'role': instance.userRole,
-      'id': instance.userId,
-    };

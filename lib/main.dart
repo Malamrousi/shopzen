@@ -5,6 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shopzen/core/app/bloc_observer.dart';
 import 'package:shopzen/core/app/env_variables.dart';
 import 'package:shopzen/core/di/di.dart';
+import 'package:shopzen/core/secure_storage/secure_storage_service.dart';
 import 'package:shopzen/core/shared_pref/shared_pref.dart';
 import 'package:shopzen/firebase_options.dart';
 import 'package:shopzen/shop_zen_app.dart';
@@ -16,6 +17,7 @@ void main() async {
     options: DefaultFirebaseOptions.currentPlatform,
   );
   await SharedPref().instantiatePreferences();
+  await SecureStorage().instantiateSecureStorage();
  Bloc.observer = AppBlocObserver();
   setupDependencies();
   await SystemChrome.setPreferredOrientations(
