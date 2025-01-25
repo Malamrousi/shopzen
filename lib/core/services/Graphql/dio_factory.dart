@@ -1,7 +1,6 @@
-
 import 'package:dio/dio.dart';
-import 'package:flutter/material.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
+
 import 'package:shopzen/core/shared_pref/shared_pref.dart';
 
 import '../../shared_pref/shared_prefs_key.dart';
@@ -21,10 +20,6 @@ class DioFactory {
         ..options.receiveTimeout = timeOut
         ..options.headers['Authorization'] =
             'Bearer ${SharedPref().getString(PrefKeys.accessToken)}';
-
-      debugPrint(
-        "[USER Token] ====> ${SharedPref().getString(PrefKeys.accessToken) ?? 'NULL TOKEN'}",
-      );
 
       addDioInterceptor();
       return dio!;

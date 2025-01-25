@@ -8,6 +8,7 @@ import 'package:shopzen/core/screens/under_build_screen.dart';
 import 'package:shopzen/features/auth/presentation/bloc/bloc/login_bloc.dart';
 import 'package:shopzen/features/auth/presentation/view/login_screen.dart';
 import 'package:shopzen/features/auth/presentation/view/sign_up_screen.dart';
+import 'package:shopzen/features/main/presentation/view/main_screen.dart';
 import 'package:shopzen/features/on_boarding/presentation/view/on_boarding_screen.dart';
 
 Route<dynamic> generateRoute(RouteSettings settings) {
@@ -26,6 +27,10 @@ Route<dynamic> generateRoute(RouteSettings settings) {
     case RouteName.signUp:
       return BaseRoute(
         page: const SignUpScreen(),
+      );
+         case RouteName.main:
+      return BaseRoute(
+        page: const MainScreen(),
       );
     default:
       return MaterialPageRoute(builder: (_) => PageUnderBuildScreen());

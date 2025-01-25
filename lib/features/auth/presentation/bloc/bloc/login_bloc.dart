@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -30,15 +31,13 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
         email: emailController.text, password: passwordController.text));
 
     await result.when(success: (loginData) async {
-      final storage = SecureStorageService.instance;
-
-      await storage.writeSecureData(SecureStorageKeys.accessToken,
-          loginData.data.login.accessToken ?? "");
-
       final userRole =
           await repo.userRole(loginData.data.login.accessToken ?? "");
       await SharedPref().setInt(PrefKeys.userId, userRole.userId ?? 0);
-
+      await SecureStorageService().writeSecureData(
+          SecureStorageKeys.accessToken,
+          loginData.data.login.accessToken ?? "");
+      log("Token ${loginData.data.login.accessToken}");
       emit(LoginState.success(userRole: userRole.userRole ?? ""));
     }, failure: (error) {
       emit(LoginState.failure(failureMessage: error));

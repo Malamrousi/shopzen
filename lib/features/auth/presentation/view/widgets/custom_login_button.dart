@@ -4,6 +4,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shopzen/core/app/app_localizations.dart';
 import 'package:shopzen/core/helper/extension.dart';
 import 'package:shopzen/core/routes/route_name.dart';
+import 'package:shopzen/core/shared_pref/shared_pref.dart';
+import 'package:shopzen/core/shared_pref/shared_prefs_key.dart';
 import 'package:shopzen/core/utils/show_toast.dart';
 import 'package:shopzen/core/utils/styles/colors_manger.dart';
 import 'package:shopzen/core/utils/styles/test_styles.dart';
@@ -23,17 +25,18 @@ class CustomLoginButton extends StatelessWidget {
             ShowToast.showToastSuccessTop(
               context: context,
               message: "login_success".tr(context),
-              seconds: 0,
+              seconds: 2,
             );
-           if(userRole=="admin"){
-                ShowToast.showToastErrorTop(
-              context: context,
-              message: "you_are_admin".tr(context),
-              seconds: 3,
-            );
-           }else{
-            context.pushNamed(RouteName.onBoarding);
-           }
+            if (userRole == "admin") {
+              ShowToast.showToastErrorTop(
+                context: context,
+                message: "you_are_admin".tr(context),
+                seconds: 1,
+              );
+            } else {
+              SharedPref().setString(PrefKeys.isLogin, "true");
+              context.pushNamed(RouteName.main);
+            }
           },
           failure: (message) {
             ShowToast.showToastErrorTop(
