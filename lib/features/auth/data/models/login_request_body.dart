@@ -3,8 +3,8 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'login_request_body.g.dart';
 @JsonSerializable()
 class LoginRequestBodyModel {
-  final String email;
-  final String password;
+  final String? email;
+  final String? password;
 
   LoginRequestBodyModel({
     required this.email,

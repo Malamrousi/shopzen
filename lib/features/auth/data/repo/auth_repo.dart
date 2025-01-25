@@ -11,10 +11,10 @@ class AuthRepo {
   Future<ApiResult<LoginResponseModel>> login(
       LoginRequestBodyModel loginRequestBodyModel) async {
     try {
-      final response = await authDataSource.login(loginRequestBodyModel);
-      return ApiResult.success(response);
+      final response = await authDataSource.login(loginRequestBodyModel: loginRequestBodyModel);
+      return  ApiResult.success(response);
     } catch (error) {
-      return ApiResult.failure(error.toString());
+      return  ApiResult.failure(error.toString());
     }
   }
 

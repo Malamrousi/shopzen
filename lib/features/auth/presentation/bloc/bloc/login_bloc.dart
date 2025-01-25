@@ -33,11 +33,13 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
       final storage = SecureStorageService.instance;
 
       await storage.writeSecureData(SecureStorageKeys.accessToken,
-          loginData.data.loginModel.accessToken ?? "");
+          loginData.data.login.accessToken ?? "");
 
       final userRole =
-          await repo.userRole(loginData.data.loginModel.accessToken ?? "");
+          await repo.userRole(loginData.data.login.accessToken ?? "");
       await SharedPref().setInt(PrefKeys.userId, userRole.userId ?? 0);
+
+      emit(LoginState.success(userRole: userRole.userRole ?? ""));
     }, failure: (error) {
       emit(LoginState.failure(failureMessage: error));
     });

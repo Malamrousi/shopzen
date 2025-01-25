@@ -1,29 +1,29 @@
-
 import 'package:shopzen/features/auth/data/models/login_request_body.dart';
 
 class AuthQueries {
-  const AuthQueries._();
-  static const instance = AuthQueries._();
   factory AuthQueries() {
-    return instance;
+    return _instance;
   }
+  const AuthQueries._();
 
-  Map<String, dynamic> loginQuery(
-          {required LoginRequestBodyModel loginRequestBodyModel}) =>
-      {
-        "query": r'''
-                  mutation login($email: String!, $password: String!) {
-	login(email: $email, password: $password) {
-		access_token
-		refresh_token
-	}
-}
+  static const AuthQueries _instance = AuthQueries._();
 
-
-''',
-        "variables": {
-          'email': loginRequestBodyModel.email,
-          'password': loginRequestBodyModel.password
-        }
-      };
+  Map<String, dynamic> loginMapQuery(
+    
+      {required LoginRequestBodyModel body}) {
+    return {
+      'query': r'''
+          mutation Login($email: String!, $password: String!) {
+            login(email: $email, password: $password) {
+              access_token
+              refresh_token
+            }
+          }
+        ''',
+      'variables': {
+        'email': body.email,
+        'password': body.password,
+      }
+    };
+  }
 }

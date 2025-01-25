@@ -24,5 +24,6 @@
     "please_enter_valid_password": "Please enter valid password",
     "please_try_again_we_have_error": "Please try again, we have error",
    "error_message" :"There is an error in your email or password. Please try again",
-    "login_successfully": "Login successfully"
+    "login_successfully": "Login successfully",
+    "you_are_admin": "You are admin, please go to admin panel"
 }

@@ -19,13 +19,21 @@ class CustomLoginButton extends StatelessWidget {
     return BlocConsumer<LoginBloc, LoginState>(
       listener: (context, state) {
         state.whenOrNull(
-          success: () {
+          success: (userRole) {
             ShowToast.showToastSuccessTop(
               context: context,
-              message: "login_successfully".tr(context),
+              message: "login_success".tr(context),
+              seconds: 0,
+            );
+           if(userRole=="admin"){
+                ShowToast.showToastErrorTop(
+              context: context,
+              message: "you_are_admin".tr(context),
               seconds: 3,
             );
+           }else{
             context.pushNamed(RouteName.onBoarding);
+           }
           },
           failure: (message) {
             ShowToast.showToastErrorTop(

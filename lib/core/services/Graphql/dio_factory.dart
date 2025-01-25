@@ -19,12 +19,8 @@ class DioFactory {
       dio!
         ..options.connectTimeout = timeOut
         ..options.receiveTimeout = timeOut
-        ..options.sendTimeout=timeOut
-        ..options.headers["contentType "]=
-        "content-type"
         ..options.headers['Authorization'] =
             'Bearer ${SharedPref().getString(PrefKeys.accessToken)}';
-            
 
       debugPrint(
         "[USER Token] ====> ${SharedPref().getString(PrefKeys.accessToken) ?? 'NULL TOKEN'}",

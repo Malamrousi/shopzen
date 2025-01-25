@@ -40,6 +40,7 @@ class _LoginViewBodyState extends State<LoginViewBody> {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 24.h),
       child: Form(
+    
         key: _loginBloc.formKey,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -60,7 +61,8 @@ class _LoginViewBodyState extends State<LoginViewBody> {
               validator: (value) {
                 if (value == null || value.isEmpty) {
                   return "please_enter_email".tr(context);
-                } else if (AppRegex.isPasswordValid(value)) {
+                } else if (AppRegex.isPasswordValid(
+                    _loginBloc.emailController.text)) {
                   return "please_enter_valid_email".tr(context);
                 }
                 return null;
@@ -91,7 +93,8 @@ class _LoginViewBodyState extends State<LoginViewBody> {
               validator: (value) {
                 if (value == null || value.isEmpty) {
                   return "please_enter_password".tr(context);
-                } else if (AppRegex.isPasswordValid(value)) {
+                } else if (AppRegex.isPasswordValid(
+                    _loginBloc.passwordController.text)) {
                   return "please_enter_valid_password".tr(context);
                 }
                 return null;

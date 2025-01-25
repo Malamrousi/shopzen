@@ -7,7 +7,6 @@ part 'login_model.g.dart';
 class LoginModel {
   @JsonKey(name: 'access_token')
   final String? accessToken;
-
   @JsonKey(name: 'refresh_token')
   final String? refreshToken;
   LoginModel({
@@ -16,5 +15,4 @@ class LoginModel {
   });
  factory LoginModel.fromJson(Map<String, dynamic> json) => _$LoginModelFromJson(json);
 
-  Map<String, dynamic> toJson() => _$LoginModelToJson(this);
 }

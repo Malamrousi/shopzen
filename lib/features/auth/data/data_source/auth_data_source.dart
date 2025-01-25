@@ -12,19 +12,20 @@ class AuthDataSource {
     required this.apiService,
   });
 
-  Future<LoginResponseModel> login(
-      LoginRequestBodyModel loginRequestBodyModel) async {
-    final response = await apiService.login(
-        AuthQueries().loginQuery(loginRequestBodyModel: loginRequestBodyModel));
+  //Login
+  Future<LoginResponseModel> login({required LoginRequestBodyModel loginRequestBodyModel}) async {
+    final response =
+        await apiService.login(AuthQueries().loginMapQuery(body: loginRequestBodyModel));
     return response;
   }
 
+  //UserRole
   Future<UserRoleModel> userRole(String token) async {
-    final Dio dio = Dio();
+    final dio = Dio();
     dio.options.headers['Authorization'] = 'Bearer $token';
-    final client=ApiService(dio);
+    final client = ApiService(dio);
     final response = await client.userRole();
-    debugPrint('User Role Response ====> ${response.userRole}');
+    debugPrint('User Role => ${response.userRole}');
     return response;
   }
 }
