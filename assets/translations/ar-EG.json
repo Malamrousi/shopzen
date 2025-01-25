@@ -22,5 +22,6 @@
    "please_enter_email": "يرجى إدخال البريد الإلكتروني",
     "please_enter_password": "يرجى إدخال كلمة المرور",
     "please_enter_valid_email": "يرجى إدخال بريد إلكتروني صالح",
-    "please_enter_valid_password": "يرجى إدخال كلمة مرور صالحة"
+    "please_enter_valid_password": "يرجى إدخال كلمة مرور صالحة",
+    "please_try_again_we_have_error": "يرجى المحاولة مرة أخرى، لدينا خطأ"
 }
