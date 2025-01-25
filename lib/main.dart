@@ -17,7 +17,7 @@ void main() async {
     options: DefaultFirebaseOptions.currentPlatform,
   );
   await SharedPref().instantiatePreferences();
-  await SecureStorage().instantiateSecureStorage();
+await  SecureStorageService.instance;
  Bloc.observer = AppBlocObserver();
   setupDependencies();
   await SystemChrome.setPreferredOrientations(

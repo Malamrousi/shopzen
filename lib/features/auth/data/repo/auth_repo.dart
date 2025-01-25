@@ -14,7 +14,7 @@ class AuthRepo {
       final response = await authDataSource.login(loginRequestBodyModel);
       return ApiResult.success(response);
     } catch (error) {
-      return ApiResult.failure("please try again, we have error");
+      return ApiResult.failure(error.toString());
     }
   }
 

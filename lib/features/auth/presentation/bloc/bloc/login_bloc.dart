@@ -21,6 +21,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
 
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
+  final formKey = GlobalKey<FormState>();
 
   FutureOr<void> login(LoginEvent event, Emitter<LoginState> emit) async {
     emit(const LoginState.loading());
@@ -29,13 +30,14 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
         email: emailController.text, password: passwordController.text));
 
     await result.when(success: (loginData) async {
-      await SecureStorage().writeSecureData(SecureStorageKeys.accessToken,
+      final storage = SecureStorageService.instance;
+
+      await storage.writeSecureData(SecureStorageKeys.accessToken,
           loginData.data.loginModel.accessToken ?? "");
 
       final userRole =
           await repo.userRole(loginData.data.loginModel.accessToken ?? "");
       await SharedPref().setInt(PrefKeys.userId, userRole.userId ?? 0);
-      emit(LoginState.success(userRole: userRole.userRole ?? ""));
     }, failure: (error) {
       emit(LoginState.failure(failureMessage: error));
     });

@@ -1,45 +1,46 @@
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 
-class SecureStorage {
-  factory SecureStorage() {
-    return secureStorage;
-  }
-  
-  SecureStorage._internal();
-  
-  static final SecureStorage secureStorage = SecureStorage._internal();
-  static late FlutterSecureStorage storage;
+class SecureStorageService {
+  static SecureStorageService? _instance;
+  final FlutterSecureStorage _storage;
 
-  Future<dynamic> instantiateSecureStorage() async {
-    storage = const FlutterSecureStorage();
-  }
+  // Private constructor
+  SecureStorageService._() : _storage = const FlutterSecureStorage();
 
-  FlutterSecureStorage getStorageInstance() {
-    return storage;
+  // Singleton instance getter
+  static SecureStorageService get instance {
+    _instance ??= SecureStorageService._();
+    return _instance!;
   }
 
-  Future<dynamic> writeSecureData(String key, String value) async {
-    await storage.write(key: key, value: value);
+  // Write data
+  Future<void> writeSecureData(String key, String value) async {
+    await _storage.write(key: key, value: value);
   }
 
+  // Read data
   Future<String?> readSecureData(String key) async {
-    return await storage.read(key: key);
+    return await _storage.read(key: key);
   }
 
-  Future<dynamic> deleteSecureData(String key) async {
-    await storage.delete(key: key);
+  // Delete data
+  Future<void> deleteSecureData(String key) async {
+    await _storage.delete(key: key);
   }
 
-  Future<dynamic> deleteAllSecureData() async {
-    await storage.deleteAll();
+  // Delete all data
+  Future<void> deleteAllSecureData() async {
+    await _storage.deleteAll();
   }
 
+  // Check if key exists
   Future<bool> containsKey(String key) async {
-    return await storage.containsKey(key: key);
+    return await _storage.containsKey(key: key);
   }
 
+  // Get all keys
   Future<Set<String>> getAllKeys() async {
-    Map<String, String> allData = await storage.readAll();
+    Map<String, String> allData = await _storage.readAll();
     return allData.keys.toSet();
   }
 }
