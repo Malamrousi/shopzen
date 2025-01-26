@@ -10,7 +10,7 @@ import 'package:shopzen/core/upload/data_source/upload_image_data_source.dart';
 import 'package:shopzen/core/upload/repo/upload_image_repo.dart';
 import 'package:shopzen/features/auth/data/data_source/auth_data_source.dart';
 import 'package:shopzen/features/auth/data/repo/auth_repo.dart';
-import 'package:shopzen/features/auth/presentation/bloc/login_bloc/login_bloc.dart';
+import 'package:shopzen/features/auth/presentation/bloc/auth_bloc/auth_bloc.dart';
 
 final getIt = GetIt.instance;
 
@@ -30,7 +30,7 @@ Future<void> setupDependencies() async {
       () => AuthRepo(authDataSource: getIt.get<AuthDataSource>()));
 //LoginBloc
   getIt
-      .registerFactory<LoginBloc>(() => LoginBloc(repo: getIt.get<AuthRepo>()));
+      .registerFactory<AuthBloc>(() => AuthBloc(repo: getIt.get<AuthRepo>()));
       //UploadImageDataSource
   getIt.registerSingleton<GlobalKey<NavigatorState>>(navKey);
   //UploadImageDataSource

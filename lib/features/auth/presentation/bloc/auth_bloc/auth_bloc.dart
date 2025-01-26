@@ -8,24 +8,29 @@ import 'package:shopzen/core/secure_storage/secure_storage_service.dart';
 import 'package:shopzen/core/shared_pref/shared_pref.dart';
 import 'package:shopzen/core/shared_pref/shared_prefs_key.dart';
 import 'package:shopzen/features/auth/data/models/login_request_body.dart';
+import 'package:shopzen/features/auth/data/models/sign_up_request_model.dart';
 import 'package:shopzen/features/auth/data/repo/auth_repo.dart';
 
-part 'login_event.dart';
-part 'login_state.dart';
-part 'login_bloc.freezed.dart';
+part 'auth_event.dart';
+part 'auth_state.dart';
+part 'auth_bloc.freezed.dart';
 
-class LoginBloc extends Bloc<LoginEvent, LoginState> {
+class AuthBloc extends Bloc<AuthEvent, AuthState> {
   final AuthRepo repo;
-  LoginBloc({required this.repo}) : super(_Initial()) {
-    on<LoginEvent>(login);
+  AuthBloc({required this.repo}) : super(_Initial()) {
+    on<AuthEvent>(login);
+        on<SignUpEvent>(_signUp);
+
   }
+
 
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
+  TextEditingController nameController = TextEditingController();
   final formKey = GlobalKey<FormState>();
 
-  FutureOr<void> login(LoginEvent event, Emitter<LoginState> emit) async {
-    emit(const LoginState.loading());
+  FutureOr<void> login(AuthEvent event, Emitter<AuthState> emit) async {
+    emit(const AuthState.loading());
 
     final result = await repo.login(LoginRequestBodyModel(
         email: emailController.text, password: passwordController.text));
@@ -38,10 +43,34 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
           SecureStorageKeys.accessToken,
           loginData.data.login.accessToken?? "");
       log("Token ${loginData.data.login.accessToken}");
-      emit(LoginState.success(userRole: userRole.userRole ?? ""));
+      emit(AuthState.success(userRole: userRole.userRole ?? ""));
     }, failure: (error) {
-      emit(LoginState.failure(failureMessage: error));
+      emit(AuthState.failure(failureMessage: error));
     });
+  }
+
+    FutureOr<void> _signUp(
+    SignUpEvent event,
+    Emitter<AuthState> emit,
+  ) async {
+    emit(const AuthState.loading());
+    final result = await repo.signUp(
+      SignUpRequestModel(
+        email: emailController.text.trim(),
+        password: passwordController.text,
+        imageUrl: event.imageUrl,
+        userName: nameController.text.trim(),
+      ),
+    );
+
+    result.when(
+      success: (signupData) {
+        add(const AuthEvent.login());
+      },
+      failure: (error) {
+        emit(AuthState.failure(failureMessage: error));
+      },
+    );
   }
 }
 
