@@ -4,7 +4,10 @@ import 'package:shopzen/core/api/api_services.dart';
 import 'package:shopzen/core/api/Graphql/graphql_queries/auth_queries.dart';
 import 'package:shopzen/features/auth/data/models/login_request_body.dart';
 import 'package:shopzen/features/auth/data/models/login_response_model.dart';
+import 'package:shopzen/features/auth/data/models/sign_up_request_model.dart';
 import 'package:shopzen/features/auth/data/models/user_role_model.dart';
+
+import '../models/sign_up_response_model.dart';
 
 class AuthDataSource {
   final ApiService apiService;
@@ -26,6 +29,12 @@ class AuthDataSource {
     final client = ApiService(dio);
     final response = await client.userRole();
     debugPrint('User Role => ${response.userRole}');
+    return response;
+  }
+
+  //signUp
+  Future<SignUpResponseModel> signUp({required SignUpRequestModel body}) async {
+    final response = await apiService.signup(AuthQueries().signUpMapQuery(body: body));
     return response;
   }
 }

@@ -1,4 +1,5 @@
 import 'package:shopzen/features/auth/data/models/login_request_body.dart';
+import 'package:shopzen/features/auth/data/models/sign_up_request_model.dart';
 
 class AuthQueries {
   factory AuthQueries() {
@@ -8,9 +9,7 @@ class AuthQueries {
 
   static const AuthQueries _instance = AuthQueries._();
 
-  Map<String, dynamic> loginMapQuery(
-    
-      {required LoginRequestBodyModel body}) {
+  Map<String, dynamic> loginMapQuery({required LoginRequestBodyModel body}) {
     return {
       'query': r'''
           mutation Login($email: String!, $password: String!) {
@@ -23,6 +22,30 @@ class AuthQueries {
       'variables': {
         'email': body.email,
         'password': body.password,
+      }
+    };
+  }
+
+  Map<String, dynamic> signUpMapQuery({required SignUpRequestModel body}) {
+    return {
+      'query': r'''
+          mutation SignUp($name: String!, $email: String!, $password: String! , $avatar: String!) {
+            signup(
+            name: $name,
+             email: $email,
+              password: $password ,
+               role: customer,
+                avatar: $avatar) {
+              id
+              name
+            }
+          }
+        ''',
+      'variables': {
+        'name': body.userName,
+        'email': body.email,
+        'password': body.password,
+        'avatar': body.imageUrl
       }
     };
   }

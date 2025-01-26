@@ -4,6 +4,8 @@ import 'package:shopzen/core/upload/model/upload_image_response.dart';
 import 'package:shopzen/features/auth/data/models/login_response_model.dart';
 import 'package:shopzen/features/auth/data/models/user_role_model.dart';
 
+import '../../features/auth/data/models/sign_up_response_model.dart';
+
 part 'api_services.g.dart';
 
 const String baseUrl = 'https://api.escuelajs.co';
@@ -24,5 +26,10 @@ abstract class ApiService {
   @POST("/api/v1/files/upload")
   Future<UploadImageResponse> uploadImage(
     @Body() FormData? file,
+  );
+
+  @POST(graphql)
+  Future<SignUpResponseModel> signup(
+    @Body() Map<String, dynamic> creteUser,
   );
 }
