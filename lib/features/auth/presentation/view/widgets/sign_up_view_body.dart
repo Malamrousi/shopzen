@@ -8,6 +8,7 @@ import 'package:shopzen/core/utils/styles/colors_manger.dart';
 import 'package:shopzen/core/widgets/app_text_form_filed.dart';
 import 'package:shopzen/core/widgets/custom_button.dart';
 import 'package:shopzen/features/auth/presentation/view/widgets/custom_text_rich.dart';
+import 'package:shopzen/features/auth/presentation/view/widgets/user_avatar_image.dart';
 
 import '../../../../../core/utils/styles/test_styles.dart';
 
@@ -31,6 +32,8 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
             "sign_up_with_email".tr(context),
             style: AppTestStyles.font20Bold(context),
           ),
+             verticalSpacing(48),
+          Center(child: UserAvatarImage(),),
           verticalSpacing(48),
           Text(
             "email".tr(context),
