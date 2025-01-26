@@ -10,7 +10,7 @@ import 'package:shopzen/core/utils/show_toast.dart';
 import 'package:shopzen/core/utils/styles/colors_manger.dart';
 import 'package:shopzen/core/utils/styles/test_styles.dart';
 import 'package:shopzen/core/widgets/custom_button.dart';
-import 'package:shopzen/features/auth/presentation/bloc/bloc/login_bloc.dart';
+import 'package:shopzen/features/auth/presentation/bloc/login_bloc/login_bloc.dart';
 import 'package:shopzen/features/on_boarding/presentation/view/widgets/custom_linear_button.dart';
 
 class CustomLoginButton extends StatelessWidget {

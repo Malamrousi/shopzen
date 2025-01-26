@@ -5,7 +5,7 @@ import 'package:shopzen/core/routes/base_route.dart';
 import 'package:shopzen/core/routes/page_slide_transition.dart';
 import 'package:shopzen/core/routes/route_name.dart';
 import 'package:shopzen/core/screens/under_build_screen.dart';
-import 'package:shopzen/features/auth/presentation/bloc/bloc/login_bloc.dart';
+import 'package:shopzen/features/auth/presentation/bloc/login_bloc/login_bloc.dart';
 import 'package:shopzen/features/auth/presentation/view/login_screen.dart';
 import 'package:shopzen/features/auth/presentation/view/sign_up_screen.dart';
 import 'package:shopzen/features/main/presentation/view/main_screen.dart';

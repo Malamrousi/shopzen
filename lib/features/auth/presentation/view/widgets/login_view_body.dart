@@ -8,7 +8,7 @@ import 'package:shopzen/core/routes/route_name.dart';
 import 'package:shopzen/core/utils/styles/colors_manger.dart';
 import 'package:shopzen/core/utils/styles/test_styles.dart';
 import 'package:shopzen/core/widgets/app_text_form_filed.dart';
-import 'package:shopzen/features/auth/presentation/bloc/bloc/login_bloc.dart';
+import 'package:shopzen/features/auth/presentation/bloc/login_bloc/login_bloc.dart';
 import 'package:shopzen/features/auth/presentation/view/widgets/custom_login_button.dart';
 import 'package:shopzen/features/auth/presentation/view/widgets/custom_text_rich.dart';
 

@@ -28,6 +28,10 @@
 		<string>LaunchScreen</string>
 		<key>UIMainStoryboardFile</key>
 		<string>Main</string>
+		<key>NSPhotoLibraryUsageDescription </key>
+		<string>Access to get user photos</string>
+		<key>NSCameraUsageDescription</key>
+		<string>Access to get user photos</string>
 		<key>UISupportedInterfaceOrientations</key>
 		<array>
 			<string>UIInterfaceOrientationPortrait</string>

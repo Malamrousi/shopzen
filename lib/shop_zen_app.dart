@@ -60,6 +60,7 @@ class ShopZenApp extends StatelessWidget {
                         ),
                       );
                     },
+                    navigatorKey: getIt.get<GlobalKey<NavigatorState>>(),
                     onGenerateRoute: generateRoute,
                     initialRoute:
                         SharedPref().getString(PrefKeys.isLogin) == "true"

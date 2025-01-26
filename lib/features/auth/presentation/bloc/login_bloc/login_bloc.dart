@@ -36,7 +36,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
       await SharedPref().setInt(PrefKeys.userId, userRole.userId ?? 0);
       await SecureStorageService().writeSecureData(
           SecureStorageKeys.accessToken,
-          loginData.data.login.accessToken ?? "");
+          loginData.data.login.accessToken?? "");
       log("Token ${loginData.data.login.accessToken}");
       emit(LoginState.success(userRole: userRole.userRole ?? ""));
     }, failure: (error) {
@@ -44,3 +44,4 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
     });
   }
 }
+

@@ -25,5 +25,10 @@
     "please_try_again_we_have_error": "Please try again, we have error",
    "error_message" :"There is an error in your email or password. Please try again",
     "login_successfully": "Login successfully",
-    "you_are_admin": "You are admin, please go to admin panel"
+    "you_are_admin": "You are admin, please go to admin panel",
+    "permission_denied": "Permission Denied",
+    "allow_access_to_gallery_and_camera": "Allow access to gallery and camera",
+    "Cancel": "Cancel",
+    "Allow": "Allow",
+    "setting": "Setting"
 }
