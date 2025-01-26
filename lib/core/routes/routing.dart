@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:shopzen/core/cubit/upload_image/upload_image_cubit.dart';
 import 'package:shopzen/core/di/di.dart';
 import 'package:shopzen/core/routes/base_route.dart';
 import 'package:shopzen/core/routes/page_slide_transition.dart';
@@ -26,7 +27,14 @@ Route<dynamic> generateRoute(RouteSettings settings) {
       );
     case RouteName.signUp:
       return BaseRoute(
-        page: const SignUpScreen(),
+        page: MultiBlocProvider(
+          providers: [
+            BlocProvider(
+              create: (context) => getIt.get<UploadImageCubit>(),
+            ),  
+          ],
+          child: const SignUpScreen(),
+          ),
       );
          case RouteName.main:
       return BaseRoute(
