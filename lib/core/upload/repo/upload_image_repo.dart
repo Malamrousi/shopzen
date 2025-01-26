@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:shopzen/core/app/app_localizations.dart';
 import 'package:shopzen/core/di/di.dart';
-import 'package:shopzen/core/services/Graphql/api_result.dart';
+import 'package:shopzen/core/api/api_result.dart';
 import 'package:shopzen/core/upload/data_source/upload_image_data_source.dart';
 import 'package:shopzen/core/upload/model/upload_image_response.dart';
 

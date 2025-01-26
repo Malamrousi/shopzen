@@ -1,4 +1,4 @@
-import 'package:shopzen/core/services/Graphql/api_result.dart';
+import 'package:shopzen/core/api/api_result.dart';
 import 'package:shopzen/features/auth/data/data_source/auth_data_source.dart';
 import 'package:shopzen/features/auth/data/models/login_request_body.dart';
 import 'package:shopzen/features/auth/data/models/login_response_model.dart';

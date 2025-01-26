@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:shopzen/core/services/Graphql/api_services.dart';
+import 'package:shopzen/core/api/api_services.dart';
 import 'package:shopzen/core/upload/model/upload_image_response.dart';
 
 class UploadImageDataSource {

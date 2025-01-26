@@ -3,7 +3,7 @@ import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 
 import 'package:shopzen/core/shared_pref/shared_pref.dart';
 
-import '../../shared_pref/shared_prefs_key.dart';
+import '../shared_pref/shared_prefs_key.dart';
 
 class DioFactory {
   DioFactory._();
