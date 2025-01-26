@@ -9,4 +9,7 @@ class AppRegex {
       r'^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$',
     ).hasMatch(password);
   }
+   static bool isNameValid(String name) {
+    return RegExp(r"^[\u0600-\u06FF\s'A-Za-z-]{2,30}$").hasMatch(name);
+  }
 }

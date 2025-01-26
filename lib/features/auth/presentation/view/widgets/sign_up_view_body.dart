@@ -35,6 +35,24 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
              verticalSpacing(48),
           Center(child: UserAvatarImage(),),
           verticalSpacing(48),
+               Text(
+            "name".tr(context),
+            style: AppTestStyles.font16Medium(context),
+          ),
+          verticalSpacing(8),
+          AppTextFormFiled(
+            controller: TextEditingController(),
+            hintText: "enter_name".tr(context),
+            validator: (value) {
+              if (value == null || value.isEmpty) {
+                return "enter_name".tr(context);
+              } else if (AppRegex.isNameValid(value)) {
+                return "please_enter_valid_name".tr(context);
+              }
+              return null;
+            },
+          ),
+          verticalSpacing(16),
           Text(
             "email".tr(context),
             style: AppTestStyles.font16Medium(context),

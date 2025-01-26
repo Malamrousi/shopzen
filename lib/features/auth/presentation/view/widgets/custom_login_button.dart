@@ -23,13 +23,11 @@ class CustomLoginButton extends StatelessWidget {
         state.whenOrNull(
           success: (userRole) {
             ShowToast.showToastSuccessTop(
-              context: context,
               message: "login_success".tr(context),
               seconds: 2,
             );
             if (userRole == "admin") {
               ShowToast.showToastErrorTop(
-                context: context,
                 message: "you_are_admin".tr(context),
                 seconds: 1,
               );
@@ -40,7 +38,6 @@ class CustomLoginButton extends StatelessWidget {
           },
           failure: (message) {
             ShowToast.showToastErrorTop(
-              context: context,
               message: "please_try_again_we_have_error".tr(context),
               seconds: 3,
             );

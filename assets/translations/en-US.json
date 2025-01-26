@@ -30,5 +30,11 @@
     "allow_access_to_gallery_and_camera": "Allow access to gallery and camera",
     "Cancel": "Cancel",
     "Allow": "Allow",
-    "setting": "Setting"
+    "setting": "Setting",
+    "image_uploaded_successfully": "Image uploaded successfully",
+    "image_upload_failed": "Image upload failed",
+    "image_removed_successfully": "Image removed successfully",
+    "name": "Name",
+    "enter_name": "Enter Name",
+    "please_enter_valid_name": "Please enter valid name"
 }

@@ -31,5 +31,11 @@
     "allow_access_to_gallery_and_camera": "السماح للوصول للمعرض والكاميرا",
     "Cancel": "الغاء",
     "Allow": "السماح",
-    "setting": "الاعدادات"
+    "setting": "الاعدادات",
+    "image_uploaded_successfully": "تم تحميل الصورة بنجاح",
+    "image_upload_failed": "فشل تحميل الصورة",
+    "image_removed_successfully": "تم حذف الصورة بنجاح",
+    "name": "الاسم",
+    "enter_name": "ادخل الاسم",
+    "please_enter_valid_name": "يرجى إدخال اسم بشكل صحيح"
 }
