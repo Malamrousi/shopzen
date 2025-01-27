@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">shopZen</string>
+  
+    <string name="GOOGLE_MAPS_API_KEY">AIzaSyBuXAvACtdRymhBedRYWEgbq4STxJi3efg</string>
+</resources>
