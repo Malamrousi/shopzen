@@ -19,10 +19,8 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   final AuthRepo repo;
   AuthBloc({required this.repo}) : super(_Initial()) {
     on<AuthEvent>(login);
-        on<SignUpEvent>(_signUp);
-
+    on<SignUpEvent>(_signUp);
   }
-
 
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
@@ -41,7 +39,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       await SharedPref().setInt(PrefKeys.userId, userRole.userId ?? 0);
       await SecureStorageService().writeSecureData(
           SecureStorageKeys.accessToken,
-          loginData.data.login.accessToken?? "");
+          loginData.data.login.accessToken ?? "");
       log("Token ${loginData.data.login.accessToken}");
       emit(AuthState.success(userRole: userRole.userRole ?? ""));
     }, failure: (error) {
@@ -49,7 +47,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     });
   }
 
-    FutureOr<void> _signUp(
+  FutureOr<void> _signUp(
     SignUpEvent event,
     Emitter<AuthState> emit,
   ) async {
@@ -73,4 +71,3 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     );
   }
 }
-

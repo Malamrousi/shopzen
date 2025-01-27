@@ -31,7 +31,10 @@ Route<dynamic> generateRoute(RouteSettings settings) {
           providers: [
             BlocProvider(
               create: (context) => getIt.get<UploadImageCubit>(),
-            ),  
+            ), 
+            BlocProvider(
+              create: (context) => getIt.get<AuthBloc>(),
+            ),   
           ],
           child: const SignUpScreen(),
           ),

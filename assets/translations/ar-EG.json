@@ -37,5 +37,7 @@
     "image_removed_successfully": "تم حذف الصورة بنجاح",
     "name": "الاسم",
     "enter_name": "ادخل الاسم",
-    "please_enter_valid_name": "يرجى إدخال اسم بشكل صحيح"
+    "please_enter_valid_name": "يرجى إدخال اسم بشكل صحيح",
+    "please_upload_image": "يرجى تحميل الصورة",
+    "sign_up_successfully": "تم التسجيل بنجاح"
 }

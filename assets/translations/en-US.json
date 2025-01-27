@@ -36,5 +36,7 @@
     "image_removed_successfully": "Image removed successfully",
     "name": "Name",
     "enter_name": "Enter Name",
-    "please_enter_valid_name": "Please enter valid name"
+    "please_enter_valid_name": "Please enter valid name",
+    "please_upload_image": "Please upload image",
+    "sign_up_successfully":"Sign up successfully"
 }
