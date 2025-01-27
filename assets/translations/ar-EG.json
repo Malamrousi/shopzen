@@ -22,5 +22,22 @@
    "please_enter_email": "يرجى إدخال البريد الإلكتروني",
     "please_enter_password": "يرجى إدخال كلمة المرور",
     "please_enter_valid_email": "يرجى إدخال بريد إلكتروني صالح",
-    "please_enter_valid_password": "يرجى إدخال كلمة مرور صالحة"
+    "please_enter_valid_password": "يرجى إدخال كلمة مرور صالحة",
+    "please_try_again_we_have_error": "يرجى المحاولة مرة أخرى، لدينا خطأ",
+    "error_message" :"هناك خطأ في بريدك الإلكتروني أو كلمة المرور. يرجى المحاولة مرة أخرى",
+    "login_successfully": "تم تسجيل الدخول بنجاح",
+    "you_are_admin": "انت ادمن لايمكنك تسجيل الدخول هنا توجه الي لوحة تحكم بالادمن الخاصه بك" ,
+    "permission_denied": " تم رفض الإذن",
+    "allow_access_to_gallery_and_camera": "السماح للوصول للمعرض والكاميرا",
+    "Cancel": "الغاء",
+    "Allow": "السماح",
+    "setting": "الاعدادات",
+    "image_uploaded_successfully": "تم تحميل الصورة بنجاح",
+    "image_upload_failed": "فشل تحميل الصورة",
+    "image_removed_successfully": "تم حذف الصورة بنجاح",
+    "name": "الاسم",
+    "enter_name": "ادخل الاسم",
+    "please_enter_valid_name": "يرجى إدخال اسم بشكل صحيح",
+    "please_upload_image": "يرجى تحميل الصورة",
+    "sign_up_successfully": "تم التسجيل بنجاح"
 }

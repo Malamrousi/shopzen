@@ -41,11 +41,10 @@ class ShopZenApp extends StatelessWidget {
                   final cubit = context.read<AppCubit>();
                   return MaterialApp(
                     title: 'ShopZen',
-        
                     debugShowCheckedModeBanner: false,
                     theme: cubit.isDark ? themeLight() : themeDark(),
                     locale: Locale(cubit.currentLangCode),
-                         localizationsDelegates: const [
+                    localizationsDelegates: const [
                       AppLocalizations.delegate,
                       GlobalMaterialLocalizations.delegate,
                       GlobalWidgetsLocalizations.delegate,
@@ -61,18 +60,24 @@ class ShopZenApp extends StatelessWidget {
                         ),
                       );
                     },
+                    navigatorKey: getIt.get<GlobalKey<NavigatorState>>(),
                     onGenerateRoute: generateRoute,
-                    initialRoute: RouteName.onBoarding,
-                            localeResolutionCallback: (deviceLocale, supportedLocales) {
+                    initialRoute:
+                        SharedPref().getString(PrefKeys.isLogin) == "true"
+                            ? RouteName.main
+                            : RouteName.onBoarding,
+                    localeResolutionCallback: (deviceLocale, supportedLocales) {
                       if (deviceLocale != null) {
                         for (var locale in supportedLocales) {
-                          if (deviceLocale.languageCode == locale.languageCode &&
+                          if (deviceLocale.languageCode ==
+                                  locale.languageCode &&
                               deviceLocale.countryCode == locale.countryCode) {
                             return locale;
                           }
                         }
                         for (var locale in supportedLocales) {
-                          if (deviceLocale.languageCode == locale.languageCode) {
+                          if (deviceLocale.languageCode ==
+                              locale.languageCode) {
                             return locale;
                           }
                         }

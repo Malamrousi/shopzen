@@ -28,6 +28,8 @@ class Assets {
 
   static const String imagesSplashScreenAndroid12 = "assets/images/splash_screen_android12.png";
 
+  static const String imagesUserAvatar = "assets/images/user_avatar.png";
+
   static const String svgAddSucess = "assets/svg/add_sucess.png";
 
   static const String svgArrow = "assets/svg/arrow.svg";
