@@ -43,5 +43,6 @@
     "what_is_your_location": "ما هو موقعك؟",
     "we_need_your_location": "نحن نحتاج لموقعك لتقديم اقرب الخدمات",
     "allow_location": "السماح للوصول للموقع",
-    "save_location": "حفظ الموقع"
+    "save_location": "حفظ الموقع",
+    "please_allow_location": "يرجى السماح للوصول للموقع"
 }
