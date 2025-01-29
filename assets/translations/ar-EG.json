@@ -39,5 +39,8 @@
     "enter_name": "ادخل الاسم",
     "please_enter_valid_name": "يرجى إدخال اسم بشكل صحيح",
     "please_upload_image": "يرجى تحميل الصورة",
-    "sign_up_successfully": "تم التسجيل بنجاح"
+    "sign_up_successfully": "تم التسجيل بنجاح",
+    "what_is_your_location": "ما هو موقعك؟",
+    "we_need_your_location": "نحن نحتاج لموقعك لتقديم اقرب الخدمات",
+    "allow_location": "السماح للوصول للموقع"
 }

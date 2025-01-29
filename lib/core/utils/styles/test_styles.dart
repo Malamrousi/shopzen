@@ -49,4 +49,11 @@ class AppTestStyles {
         color: ColorsManger.primaryColor700,
         fontFamily: FontFamily.getFontFamily(),
       );
+
+          static TextStyle font24Bold(BuildContext context) => TextStyle(
+        fontSize: 24.sp,
+        fontWeight: FontWeightManger.bold,
+         color: context.colorThemeExtension.mainColor,
+        fontFamily: FontFamily.getFontFamily(),
+      );
 }
