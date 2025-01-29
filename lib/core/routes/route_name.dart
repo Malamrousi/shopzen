@@ -5,4 +5,6 @@ class RouteName {
   static const String signUp = "/signUp";
   static const String main = "/main";
   static const String location = "/location";
+  static const String map = "/map";
+
 }
