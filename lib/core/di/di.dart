@@ -8,6 +8,7 @@ import 'package:shopzen/core/api/dio_factory.dart';
 import 'package:shopzen/core/cubit/upload_image/upload_image_cubit.dart';
 import 'package:shopzen/core/upload/data_source/upload_image_data_source.dart';
 import 'package:shopzen/core/upload/repo/upload_image_repo.dart';
+import 'package:shopzen/core/utils/location_serviCe.dart';
 import 'package:shopzen/features/auth/data/data_source/auth_data_source.dart';
 import 'package:shopzen/features/auth/data/repo/auth_repo.dart';
 import 'package:shopzen/features/auth/presentation/bloc/auth_bloc/auth_bloc.dart';
@@ -24,6 +25,8 @@ Future<void> setupDependencies() async {
 
   getIt.registerFactory<AppCubit>(() => AppCubit()); //
   getIt.registerLazySingleton<ApiService>(() => ApiService(dio));
+  
+      getIt.registerFactory<LocationService>(()=>LocationService());
   getIt.registerLazySingleton<AuthDataSource>(
       () => AuthDataSource(apiService: getIt.get<ApiService>()));
   getIt.registerLazySingleton<AuthRepo>(
@@ -42,4 +45,5 @@ Future<void> setupDependencies() async {
       //UploadImageCubit
   getIt.registerFactory<UploadImageCubit>(
       () => UploadImageCubit(uploadImageRepo: getIt.get<UploadImageRepo>()));
+
 }

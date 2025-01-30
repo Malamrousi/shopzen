@@ -5,4 +5,6 @@ class PrefKeys {
 
   static const String userId = 'userId';
   static const String isLogin = 'isLogin';
+  static const String location = 'location';
+
 }

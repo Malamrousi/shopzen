@@ -21,7 +21,7 @@ class CustomLoginButton extends StatelessWidget {
     return BlocConsumer<AuthBloc, AuthState>(
       listener: (context, state) {
         state.whenOrNull(
-          success: (userRole) {
+          success: (userRole)async {
             ShowToast.showToastSuccessTop(
               message: "login_success".tr(context),
               seconds: 2,
@@ -29,11 +29,17 @@ class CustomLoginButton extends StatelessWidget {
             if (userRole == "admin") {
               ShowToast.showToastErrorTop(
                 message: "you_are_admin".tr(context),
-                seconds: 1,
+                seconds: 2,
               );
             } else {
               SharedPref().setString(PrefKeys.isLogin, "true");
+                final location = await SharedPref().getString(PrefKeys.location);
+           if(location==null){
+             context.pushNamed(RouteName.location);
+           }else{
               context.pushNamed(RouteName.main);
+
+           }
             }
           },
           failure: (message) {

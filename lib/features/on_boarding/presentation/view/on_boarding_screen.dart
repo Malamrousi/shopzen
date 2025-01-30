@@ -6,9 +6,14 @@ class OnBoardingScreen extends StatelessWidget {
   const OnBoardingScreen({super.key});
 
   @override
+
   Widget build(BuildContext context) {
     return Scaffold(
-   body:SafeArea(child: OnBoardingViewBody()) ,
+   body:SingleChildScrollView(
+     child: SafeArea(child: SizedBox(
+                height: MediaQuery.of(context).size.height,
+      child: OnBoardingViewBody())),
+   ) ,
     );
   }
 }

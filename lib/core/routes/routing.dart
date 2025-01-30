@@ -10,6 +10,8 @@ import 'package:shopzen/features/auth/presentation/bloc/auth_bloc/auth_bloc.dart
 import 'package:shopzen/features/auth/presentation/view/login_screen.dart';
 import 'package:shopzen/features/auth/presentation/view/sign_up_screen.dart';
 import 'package:shopzen/features/main/presentation/view/main_screen.dart';
+import 'package:shopzen/features/map/presentation/view/google_map_screen.dart';
+import 'package:shopzen/features/map/presentation/view/location_screen.dart';
 import 'package:shopzen/features/on_boarding/presentation/view/on_boarding_screen.dart';
 
 Route<dynamic> generateRoute(RouteSettings settings) {
@@ -42,6 +44,14 @@ Route<dynamic> generateRoute(RouteSettings settings) {
          case RouteName.main:
       return BaseRoute(
         page: const MainScreen(),
+      );
+              case RouteName.location:
+      return BaseRoute(
+        page: const LocationScreen(),
+      );
+                 case RouteName.map:
+      return BaseRoute(
+        page: const GoogleMapScreen(),
       );
     default:
       return MaterialPageRoute(builder: (_) => PageUnderBuildScreen());

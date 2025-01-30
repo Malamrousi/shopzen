@@ -38,5 +38,10 @@
     "enter_name": "Enter Name",
     "please_enter_valid_name": "Please enter valid name",
     "please_upload_image": "Please upload image",
-    "sign_up_successfully":"Sign up successfully"
+    "sign_up_successfully":"Sign up successfully",
+    "what_is_your_location": "What is your location?",
+    "we_need_your_location": "We need to know your location in order to suggest nearby services.",
+    "allow_location": "Allow Location",
+    "save_location": "Save Location" ,
+    "please_allow_location": "Please allow location"
 }
