@@ -26,7 +26,8 @@ class OnBoardingViewBody extends StatelessWidget {
            
              children: [
               DarkAndLangButtons(),
-                verticalSpacing(48),
+                verticalSpacing(30
+                ),
                Image.asset(Assets.imagesOnBoarding),
                verticalSpacing(48),
                Text(
@@ -40,7 +41,7 @@ class OnBoardingViewBody extends StatelessWidget {
                  textAlign: TextAlign.center,
                  style: AppTestStyles.font18Bold(context),
                ),
-               verticalSpacing(63),
+               verticalSpacing(20),
                CustomButton(
                  onPressed: () {
                   context.pushNamed(RouteName.login);

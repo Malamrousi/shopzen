@@ -26,6 +26,8 @@ class _GoogleMapScreenState extends State<GoogleMapScreen> {
   late CameraPosition initialCameraPosition;
   GoogleMapController? googleMapController;
   Set<Marker> markers = {};
+    bool isLocationFetched = false; // متغير لمنع استدعاء الموقع أكثر من مرة
+
   String? savedAddress;
 
   @override
@@ -91,7 +93,10 @@ class _GoogleMapScreenState extends State<GoogleMapScreen> {
     googleMapController!.setMapStyle(mapStyle);
   }
 
-  void getMyLocation() async {
+void getMyLocation() async {
+    if (isLocationFetched) return; // منع الاستدعاء المتكرر
+    isLocationFetched = true;
+
     bool hasService = await locationService.checkAndRequestLocationService();
     bool hasPermission = await locationService.checkAndRequestLocationPermission();
 
@@ -103,10 +108,7 @@ class _GoogleMapScreenState extends State<GoogleMapScreen> {
           position: LatLng(position.latitude, position.longitude),
         );
 
-        setState(() {
-          markers.clear();
-          markers.add(userMarker);
-        });
+     
 
         googleMapController?.animateCamera(
           CameraUpdate.newLatLng(userMarker.position),
@@ -115,7 +117,7 @@ class _GoogleMapScreenState extends State<GoogleMapScreen> {
     }
   }
 
-  void saveUserLocation() async {
+   void saveUserLocation() async {
     if (markers.isNotEmpty) {
       LatLng userPosition = markers.first.position;
       try {
@@ -126,7 +128,7 @@ class _GoogleMapScreenState extends State<GoogleMapScreen> {
         if (placemark.isNotEmpty) {
           Placemark place = placemark.first;
           String fullAddress =
-              "${place.street}, ${place.locality}, ${place.country}";
+              "${place.locality}, ${place.country}";
           setState(() {
             savedAddress = fullAddress;
           });

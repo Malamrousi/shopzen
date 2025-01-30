@@ -71,7 +71,7 @@ class AppTextFormFiled extends StatelessWidget {
                    ColorsManger.gray500
             
           )),
-      style: AppTestStyles.font16Regular(context),
+      style: AppTestStyles.font16RegularThemeColor(context),
     );
   }
 }

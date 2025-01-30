@@ -32,7 +32,8 @@ class LocationScreenViewBody extends StatelessWidget {
               style: AppTestStyles.font24Bold(context),
             ),
             verticalSpacing(8),
-            Text(
+            Text( 
+              textAlign: TextAlign.center,
               "we_need_your_location".tr(context),
               style: AppTestStyles.font16Regular(context),
             ),

@@ -22,13 +22,19 @@ class SignUpButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocConsumer<AuthBloc, AuthState>(
       listener: (context, state) {
-        state.whenOrNull(success: (_) {
+        state.whenOrNull(success: (_)async {
           ShowToast.showToastSuccessTop(
             message: "sign_up_successfully".tr(context),
             seconds: 2,
           );
           SharedPref().setString(PrefKeys.isLogin, "true");
-          context.pushNamedAndRemoveUntil(RouteName.main);
+                 final location = await SharedPref().getString(PrefKeys.location);
+           if(location==null){
+             context.pushNamed(RouteName.location);
+           }else{
+              context.pushNamed(RouteName.main);
+
+           }
         }, failure: (message) {
           ShowToast.showToastErrorTop(
             message: "please_try_again_we_have_error".tr(context),

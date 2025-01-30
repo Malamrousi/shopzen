@@ -50,6 +50,7 @@ class LocationService {
     return showCupertinoDialog(
       context: getIt.get<GlobalKey<NavigatorState>>().currentState!.context,
       builder: (context) {
+        
         return CupertinoAlertDialog(
           title:  Text("permission_denied".tr(context)),
           content:  Text("please_allow_location".tr(context)),

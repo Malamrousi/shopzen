@@ -79,7 +79,6 @@ unlinked_spec.ds
 **/android/key.properties
 **/android/.gradle
 **/android/gradle
-**/android/gradle.properties
 *.jks
 
 # iOS/XCode related
