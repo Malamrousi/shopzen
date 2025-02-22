@@ -11,3 +11,8 @@ SignUpModel _$SignUpModelFromJson(Map<String, dynamic> json) => SignUpModel(
       email: json['email'] as String?,
     );
 
+Map<String, dynamic> _$SignUpModelToJson(SignUpModel instance) =>
+    <String, dynamic>{
+      'id': instance.userid,
+      'email': instance.email,
+    };

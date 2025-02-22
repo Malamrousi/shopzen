@@ -11,3 +11,8 @@ LoginModel _$LoginModelFromJson(Map<String, dynamic> json) => LoginModel(
       refreshToken: json['refresh_token'] as String?,
     );
 
+Map<String, dynamic> _$LoginModelToJson(LoginModel instance) =>
+    <String, dynamic>{
+      'access_token': instance.accessToken,
+      'refresh_token': instance.refreshToken,
+    };
