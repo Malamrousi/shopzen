@@ -9,6 +9,7 @@ import 'package:shopzen/core/screens/under_build_screen.dart';
 import 'package:shopzen/features/auth/presentation/bloc/auth_bloc/auth_bloc.dart';
 import 'package:shopzen/features/auth/presentation/view/login_screen.dart';
 import 'package:shopzen/features/auth/presentation/view/sign_up_screen.dart';
+import 'package:shopzen/features/main/presentation/bloc/main_cubit/main_cubit_cubit.dart';
 import 'package:shopzen/features/main/presentation/view/main_screen.dart';
 import 'package:shopzen/features/map/presentation/view/google_map_screen.dart';
 import 'package:shopzen/features/map/presentation/view/location_screen.dart';
@@ -43,7 +44,13 @@ Route<dynamic> generateRoute(RouteSettings settings) {
       );
          case RouteName.main:
       return BaseRoute(
-        page: const MainScreen(),
+        page: MultiBlocProvider(
+          providers: [
+            BlocProvider(
+              create: (context) => getIt.get<MainCubit>(),
+            )
+          ],
+          child: const MainScreen()),
       );
               case RouteName.location:
       return BaseRoute(

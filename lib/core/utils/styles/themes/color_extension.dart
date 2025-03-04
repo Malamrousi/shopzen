@@ -5,7 +5,9 @@ import 'package:shopzen/core/utils/styles/colors_manger.dart';
 class ColorExtension extends ThemeExtension<ColorExtension> {
   final Color? mainColor;
   final Color? textColor;
-  const ColorExtension({this.mainColor, this.textColor});
+  final Color? bottomNavColor;
+
+  const ColorExtension({this.mainColor, this.textColor , this.bottomNavColor});
 
   @override
   ThemeExtension<ColorExtension> copyWith({Color? color}) {
@@ -23,9 +25,12 @@ class ColorExtension extends ThemeExtension<ColorExtension> {
   }
 
   static const ColorExtension lightColor = ColorExtension(
-      mainColor: ColorsManger.whiteColor, textColor: ColorsManger.blackColor);
+      mainColor: ColorsManger.whiteColor, textColor: ColorsManger.blackColor ,
+        bottomNavColor: ColorsManger.gray50
+);
   static const ColorExtension darkColor = ColorExtension(
     mainColor: ColorsManger.blackColor,
     textColor: ColorsManger.whiteColor,
+    bottomNavColor: ColorsManger.darkTealBlue
   );
 }

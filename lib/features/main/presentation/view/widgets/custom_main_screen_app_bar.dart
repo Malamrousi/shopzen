@@ -4,35 +4,50 @@ import 'package:shopzen/core/app/app_localizations.dart';
 import 'package:shopzen/core/helper/theme_extension.dart';
 import 'package:shopzen/core/utils/styles/test_styles.dart';
 
-import '../../../../../core/assets/assets.dart';
+import '../../../../../core/animations/animate_do.dart';
 
-class CustomMainScreenAppBar extends StatelessWidget
-    implements PreferredSizeWidget {
+
+class CustomMainScreenAppBar extends StatelessWidget implements PreferredSizeWidget {
   const CustomMainScreenAppBar({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return ListTile(
-      contentPadding: EdgeInsets.zero,
-      leading: Image.asset(Assets.imagesUserAvatar ,
-        width: 80.w,
-        height: 80.h,
+    return AppBar(
+      automaticallyImplyLeading: false,
+      backgroundColor: context.colorThemeExtension.mainColor,
+      elevation: 0,
+      title: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          CustomFadeInRight(
+            duration: 800,
+            child: Column(
+              children: [
+                Text(
+                "hello".tr(context),
+                  style: AppTestStyles.font20Bold(context),
+                ),
+                Text(
+                  "Mohammed",
+                  style: AppTestStyles.font16Regular(context),
+                ),
+              ],
+            ),
+          ),
+          CustomFadeInLeft(
+            duration: 800,
+            child: Center(
+              child:  IconButton(onPressed: () {},
+               icon: Icon(
+                 Icons.notifications_none_rounded,
+                 color: context.colorThemeExtension.textColor,
+                 size: 26.sp,
+               )
+              ),
+            ),
+          )
+        ],
       ),
-      title: Text(
-        "hello".tr(context),
-        style: AppTestStyles.font18Bold(context),
-      ),
-      subtitle: Text(
-        "Mohammed",
-        style: AppTestStyles.font16MediumPrimary700(context),
-      ),
-      trailing: IconButton(
-          onPressed: () {},
-          icon: Icon(
-            Icons.notifications_outlined,
-            size: 26.sp,
-            color: context.colorThemeExtension.textColor,
-          )),
     );
   }
 
