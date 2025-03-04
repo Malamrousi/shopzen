@@ -9,13 +9,13 @@ class AppTestStyles {
   static TextStyle font30Bold(BuildContext context) => TextStyle(
         fontSize: 30.sp,
         fontWeight: FontWeightManger.bold,
-        color: context.colorThemeExtension.mainColor,
+        color: context.colorThemeExtension.textColor,
         fontFamily: FontFamily.getFontFamily(),
       );
   static TextStyle font18Bold(BuildContext context) => TextStyle(
         fontSize: 18.sp,
         fontWeight: FontWeightManger.medium,
-        color: context.colorThemeExtension.mainColor,
+        color: context.colorThemeExtension.textColor,
         fontFamily: FontFamily.getFontFamily(),
       );
 
@@ -34,20 +34,26 @@ class AppTestStyles {
        static TextStyle font16RegularThemeColor(BuildContext context) => TextStyle(
         fontSize: 16.sp,
         fontWeight: FontWeightManger.regular,
-        color: context.colorThemeExtension.mainColor,
+        color: context.colorThemeExtension.textColor,
         fontFamily: FontFamily.getFontFamily(),
       );
   static TextStyle font20Bold(BuildContext context) => TextStyle(
         fontSize: 24.sp,
         fontWeight: FontWeightManger.bold,
-        color: context.colorThemeExtension.mainColor,
+        color: context.colorThemeExtension.textColor,
+        fontFamily: FontFamily.getFontFamily(),
+      );
+        static TextStyle font18Regular(BuildContext context) => TextStyle(
+        fontSize: 18.sp,
+        fontWeight: FontWeightManger.regular,
+        color: context.colorThemeExtension.textColor,
         fontFamily: FontFamily.getFontFamily(),
       );
 
   static TextStyle font16Medium(BuildContext context) => TextStyle(
         fontSize: 16.sp,
         fontWeight: FontWeightManger.medium,
-        color: context.colorThemeExtension.mainColor,
+        color: context.colorThemeExtension.textColor,
         fontFamily: FontFamily.getFontFamily(),
       );
        static TextStyle font16MediumPrimary700(BuildContext context) => TextStyle(
@@ -60,7 +66,7 @@ class AppTestStyles {
           static TextStyle font24Bold(BuildContext context) => TextStyle(
         fontSize: 24.sp,
         fontWeight: FontWeightManger.bold,
-         color: context.colorThemeExtension.mainColor,
+         color: context.colorThemeExtension.textColor,
         fontFamily: FontFamily.getFontFamily(),
       );
 }
