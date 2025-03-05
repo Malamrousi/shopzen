@@ -34,6 +34,8 @@ class ColorsManger {
   static const Color alertColorYellow300 = Color(0xffff8cf51);
   static const Color alertColorYellow400 = Color(0xffff6bc2f);
 
+//
+  static const Color darkTealBlue = Color(0xFF1A2526);
 
 }
 

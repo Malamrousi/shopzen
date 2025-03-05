@@ -12,6 +12,7 @@ import 'package:shopzen/core/utils/location_serviCe.dart';
 import 'package:shopzen/features/auth/data/data_source/auth_data_source.dart';
 import 'package:shopzen/features/auth/data/repo/auth_repo.dart';
 import 'package:shopzen/features/auth/presentation/bloc/auth_bloc/auth_bloc.dart';
+import 'package:shopzen/features/main/presentation/bloc/main_cubit/main_cubit_cubit.dart';
 
 final getIt = GetIt.instance;
 
@@ -25,25 +26,27 @@ Future<void> setupDependencies() async {
 
   getIt.registerFactory<AppCubit>(() => AppCubit()); //
   getIt.registerLazySingleton<ApiService>(() => ApiService(dio));
-  
-      getIt.registerFactory<LocationService>(()=>LocationService());
+
+  getIt.registerFactory<LocationService>(() => LocationService());
   getIt.registerLazySingleton<AuthDataSource>(
       () => AuthDataSource(apiService: getIt.get<ApiService>()));
   getIt.registerLazySingleton<AuthRepo>(
       () => AuthRepo(authDataSource: getIt.get<AuthDataSource>()));
 //LoginBloc
-  getIt
-      .registerFactory<AuthBloc>(() => AuthBloc(repo: getIt.get<AuthRepo>()));
-      //UploadImageDataSource
+  getIt.registerFactory<AuthBloc>(() => AuthBloc(repo: getIt.get<AuthRepo>()));
+  //UploadImageDataSource
   getIt.registerSingleton<GlobalKey<NavigatorState>>(navKey);
   //UploadImageDataSource
   getIt.registerLazySingleton<UploadImageDataSource>(
       () => UploadImageDataSource(apiServices: getIt.get<ApiService>()));
-      //UploadImageRepo
+  //UploadImageRepo
   getIt.registerLazySingleton<UploadImageRepo>(() => UploadImageRepo(
       uploadImageDataSource: getIt.get<UploadImageDataSource>()));
-      //UploadImageCubit
+  //UploadImageCubit
   getIt.registerFactory<UploadImageCubit>(
       () => UploadImageCubit(uploadImageRepo: getIt.get<UploadImageRepo>()));
 
+  getIt.registerFactory<MainCubit>(
+    () => MainCubit(),
+  );
 }
