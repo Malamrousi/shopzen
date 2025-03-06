@@ -1,9 +1,10 @@
 import 'package:dio/dio.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 
-import 'package:shopzen/core/shared_pref/shared_pref.dart';
+import 'package:shopzen/core/utils/app_logout.dart';
 
-import '../shared_pref/shared_prefs_key.dart';
+import '../secure_storage/secure_storage_keys.dart';
+import '../secure_storage/secure_storage_service.dart';
 
 class DioFactory {
   DioFactory._();
@@ -19,7 +20,7 @@ class DioFactory {
         ..options.connectTimeout = timeOut
         ..options.receiveTimeout = timeOut
         ..options.headers['Authorization'] =
-            'Bearer ${SharedPref().getString(PrefKeys.accessToken)}';
+            'Bearer ${SecureStorageService().readSecureData(SecureStorageKeys.accessToken)}';
 
       addDioInterceptor();
       return dio!;
@@ -33,6 +34,24 @@ class DioFactory {
       PrettyDioLogger(
         request: false,
         compact: false,
+      ),
+    );
+
+    dio?.interceptors.add(
+      InterceptorsWrapper(
+        onRequest: (options, handler) {
+          options.headers['Authorization'] =
+              'Bearer ${SecureStorageService().readSecureData(SecureStorageKeys.accessToken)}';
+
+          return handler.next(options);
+        },
+        onError: (error, header) async {
+          if (error.response?.statusCode == 400) {
+            await AppLogout().logout();
+          }else if(error.response?.statusCode == 401){
+            
+          }
+        },
       ),
     );
   }
