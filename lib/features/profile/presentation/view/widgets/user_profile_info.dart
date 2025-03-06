@@ -4,9 +4,12 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shopzen/core/helper/spacing.dart';
 import 'package:shopzen/core/helper/string_extension.dart';
 import 'package:shopzen/core/utils/styles/test_styles.dart';
+import 'package:shopzen/features/auth/data/models/user_role_model.dart';
 
 class UserProfileInfo extends StatelessWidget {
-  const UserProfileInfo({super.key});
+  const UserProfileInfo({super.key, required this.userRoleModel});
+
+  final UserRoleModel userRoleModel;
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +22,7 @@ class UserProfileInfo extends StatelessWidget {
           child: CachedNetworkImage(
             width: 80.w,
             height: 80.h,
-            imageUrl: "https://cdn.pixabay.com/photo/2025/02/26/09/58/bird-9432600_1280.jpg",
+            imageUrl: userRoleModel.userImage ?? '',
             placeholder: (context, url) => CircularProgressIndicator(),
             errorWidget: (context, url, error) => Icon(Icons.error),
             fit: BoxFit.fill,
@@ -27,13 +30,13 @@ class UserProfileInfo extends StatelessWidget {
         ),
         verticalSpacing(16.h),
         Text(
-          "mohammed".toLowerCase().toCapitalized(),
-          style:AppTestStyles.font20Bold(context) ,
+          userRoleModel.name ?? 'No Name'.toLowerCase().toCapitalized(),
+          style: AppTestStyles.font20Bold(context),
         ),
-              verticalSpacing(8.h),
-         Text(
-          "m.alamrousi.work@gmail.com".toLowerCase().toCapitalized(),
-          style:AppTestStyles.font16Regular(context) ,
+        verticalSpacing(8.h),
+        Text(
+          userRoleModel.email ?? 'No Email'.toLowerCase().toCapitalized(),
+          style: AppTestStyles.font16Regular(context),
         ),
       ],
     );

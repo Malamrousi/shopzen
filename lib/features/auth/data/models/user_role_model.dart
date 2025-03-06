@@ -7,10 +7,18 @@ class UserRoleModel {
   final String? userRole;
   @JsonKey(name: "id")
   final int? userId;
+  @JsonKey(name:"email" )
+  final String? email;
+  @JsonKey(name:"name" )
+  final String? name;
+  @JsonKey(name:"avatar" )
+  final String? userImage;
 
   UserRoleModel( {
     required this.userRole,
-    required this.userId
+    required this.userId,
+    this.email, this.name, this.userImage, 
   });
    factory UserRoleModel.fromJson(Map<String, dynamic> json) => _$UserRoleModelFromJson(json);
 }
+

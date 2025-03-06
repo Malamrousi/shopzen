@@ -13,6 +13,10 @@ import 'package:shopzen/features/auth/data/data_source/auth_data_source.dart';
 import 'package:shopzen/features/auth/data/repo/auth_repo.dart';
 import 'package:shopzen/features/auth/presentation/bloc/auth_bloc/auth_bloc.dart';
 import 'package:shopzen/features/main/presentation/bloc/main_cubit/main_cubit_cubit.dart';
+import 'package:shopzen/features/profile/data/data_source/profile_data_source.dart';
+
+import '../../features/profile/data/repo/user_info_repo.dart';
+import '../../features/profile/presentation/bloc/bloc/profile_bloc.dart';
 
 final getIt = GetIt.instance;
 
@@ -49,4 +53,14 @@ Future<void> setupDependencies() async {
   getIt.registerFactory<MainCubit>(
     () => MainCubit(),
   );
+  //profile Data Source
+  getIt.registerLazySingleton<ProfileDataSource>(
+      () => ProfileDataSource(apiService: getIt.get<ApiService>()));
+    //profile Repo
+  getIt.registerLazySingleton<UserInfoRepo>(
+      () => UserInfoRepo(profileDataSource: getIt.get<ProfileDataSource>()));
+
+  getIt.registerFactory<ProfileBloc>(
+      () => ProfileBloc(userInfoRepo: getIt.get<UserInfoRepo>()));
+      
 }

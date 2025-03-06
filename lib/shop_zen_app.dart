@@ -64,9 +64,9 @@ class ShopZenApp extends StatelessWidget {
                     navigatorKey: getIt.get<GlobalKey<NavigatorState>>(),
                     onGenerateRoute: generateRoute,
                     initialRoute:
-                        // SharedPref().getString(PrefKeys.isLogin) == "true"
-                             RouteName.main,
-                            // : RouteName.onBoarding,
+                      SharedPref().getString(PrefKeys.isLogin) == "true" ?
+                             RouteName.main
+                        : RouteName.onBoarding,
                     localeResolutionCallback: (deviceLocale, supportedLocales) {
                       if (deviceLocale != null) {
                         for (var locale in supportedLocales) {
