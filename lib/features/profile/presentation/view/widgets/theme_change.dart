@@ -8,7 +8,6 @@ import 'package:shopzen/core/utils/styles/colors_manger.dart';
 import '../../../../../core/cubit/app_cubit/app_cubit.dart';
 import '../../../../../core/helper/spacing.dart';
 import '../../../../../core/utils/styles/test_styles.dart';
-import '../../../../../core/widgets/custom_dialogs.dart';
 
 class ThemeChange extends StatelessWidget {
   const ThemeChange({super.key});

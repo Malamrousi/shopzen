@@ -5,6 +5,7 @@ import 'package:shopzen/core/animations/animate_do.dart';
 import 'package:shopzen/core/app/app_localizations.dart';
 import 'package:shopzen/core/utils/styles/test_styles.dart';
 import 'package:shopzen/features/profile/presentation/bloc/bloc/profile_bloc.dart';
+import 'package:shopzen/features/profile/presentation/view/widgets/build_developer.dart';
 import 'package:shopzen/features/profile/presentation/view/widgets/lang_change.dart';
 
 import '../../../../../core/helper/spacing.dart';
@@ -51,6 +52,9 @@ class ProfileScreenBody extends StatelessWidget {
             CustomFadeInRight(child: LangChange(), duration: 400),
             verticalSpacing(20.h),
             CustomFadeInRight(child: ThemeChange(), duration: 400),
+                        verticalSpacing(20.h),
+
+            CustomFadeInRight(child: BuildDeveloper(), duration: 400),
           ],
         ),
       ),

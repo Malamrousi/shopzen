@@ -5,6 +5,7 @@ import 'package:shopzen/core/di/di.dart';
 import 'package:shopzen/core/routes/base_route.dart';
 import 'package:shopzen/core/routes/page_slide_transition.dart';
 import 'package:shopzen/core/routes/route_name.dart';
+import 'package:shopzen/core/screens/custom_web_view.dart';
 import 'package:shopzen/core/screens/under_build_screen.dart';
 import 'package:shopzen/features/auth/presentation/bloc/auth_bloc/auth_bloc.dart';
 import 'package:shopzen/features/auth/presentation/view/login_screen.dart';
@@ -16,6 +17,7 @@ import 'package:shopzen/features/map/presentation/view/location_screen.dart';
 import 'package:shopzen/features/on_boarding/presentation/view/on_boarding_screen.dart';
 
 Route<dynamic> generateRoute(RouteSettings settings) {
+  final argument = settings.arguments;
   switch (settings.name) {
     case RouteName.onBoarding:
       return BaseRoute(
@@ -34,31 +36,35 @@ Route<dynamic> generateRoute(RouteSettings settings) {
           providers: [
             BlocProvider(
               create: (context) => getIt.get<UploadImageCubit>(),
-            ), 
+            ),
             BlocProvider(
               create: (context) => getIt.get<AuthBloc>(),
-            ),   
+            ),
           ],
           child: const SignUpScreen(),
-          ),
+        ),
       );
-         case RouteName.main:
+    case RouteName.main:
       return BaseRoute(
-        page: MultiBlocProvider(
-          providers: [
-            BlocProvider(
-              create: (context) => getIt.get<MainCubit>(),
-            )
-          ],
-          child: const MainScreen()),
+        page: MultiBlocProvider(providers: [
+          BlocProvider(
+            create: (context) => getIt.get<MainCubit>(),
+          )
+        ], child: const MainScreen()),
       );
-              case RouteName.location:
+    case RouteName.location:
       return BaseRoute(
         page: const LocationScreen(),
       );
-                 case RouteName.map:
+    case RouteName.map:
       return BaseRoute(
         page: const GoogleMapScreen(),
+      );
+    case RouteName.webView:
+      return BaseRoute(
+        page: CustomWebView(
+          url: argument as String,
+        ),
       );
     default:
       return MaterialPageRoute(builder: (_) => PageUnderBuildScreen());

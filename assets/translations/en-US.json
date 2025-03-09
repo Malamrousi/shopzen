@@ -1,5 +1,5 @@
 {
-    "shop_zen": "Shop Zen",
+    "shop_zen": "ShopZen",
     "login": "Login",
     "email": "Email",
     "password": "Password",
@@ -50,6 +50,7 @@
     "change_language":"Do you want to change the language to Arabic?",
     "sure": "sure",
     "cancel": "cancel",
-    "dark_mode": "Dark Mode"
+    "dark_mode": "Dark Mode",
+    "build_developer": "Build  Developer"
 
 }
