@@ -45,5 +45,10 @@
     "allow_location": "السماح للوصول للموقع",
     "save_location": "حفظ الموقع",
     "please_allow_location": "يرجى السماح للوصول للموقع",
-    "hello": "مرحبا"
+    "hello": "مرحبا",
+    "application_features": "خصائص التطبيق",
+    "lang_key":"العربية",
+    "change_language":"هل تريد تغيير اللغة الي الغه الانجليزيه؟", 
+    "sure": "نعم",
+    "cancel": "الغاء"
 }

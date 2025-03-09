@@ -30,12 +30,12 @@ class UserProfileInfo extends StatelessWidget {
         ),
         verticalSpacing(16.h),
         Text(
-          userRoleModel.name ?? 'No Name'.toLowerCase().toCapitalized(),
+          "Mohammed Mostafa".toLowerCase().toCapitalized(),
           style: AppTestStyles.font20Bold(context),
         ),
         verticalSpacing(8.h),
         Text(
-          userRoleModel.email ?? 'No Email'.toLowerCase().toCapitalized(),
+          "m.alamrousi.work2@gmail.com".toLowerCase().toCapitalized(),
           style: AppTestStyles.font16Regular(context),
         ),
       ],
