@@ -40,8 +40,8 @@ class AppLocalizations {
   late Map<String, String> _localizedStrings;
 
   Future loadJsonLanguage() async {
-    String jsonString = await rootBundle
-        .loadString("$ASSET_PATH_LOCALIZATIONS/${locale!.languageCode}-${locale!.countryCode}.json");
+    String jsonString = await rootBundle.loadString(
+        "$ASSET_PATH_LOCALIZATIONS/${locale!.languageCode}-${locale!.countryCode}.json");
 
     Map<String, dynamic> jsonMap = json.decode(jsonString);
     _localizedStrings = jsonMap.map((key, value) {
@@ -52,7 +52,8 @@ class AppLocalizations {
   String translate(String key) => _localizedStrings[key] ?? "";
 }
 
-class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {
+class _AppLocalizationsDelegate
+    extends LocalizationsDelegate<AppLocalizations> {
   const _AppLocalizationsDelegate();
 
   @override

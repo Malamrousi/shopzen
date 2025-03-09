@@ -49,6 +49,7 @@
     "lang_key":"English",
     "change_language":"Do you want to change the language to Arabic?",
     "sure": "sure",
-    "cancel": "cancel"
+    "cancel": "cancel",
+    "dark_mode": "Dark Mode"
 
 }
