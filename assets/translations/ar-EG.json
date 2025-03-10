@@ -55,6 +55,7 @@
     "build_developer": "مطور التطبيق",
     "notification": " الاشعارات",
      "subscribed_to_notifications":"تم الاشتراك فى الاشعارات",
-     "unsubscribed_to_notifications":"تم الغاء الاشتراك فى الاشعارات"
+     "unsubscribed_to_notifications":"تم الغاء الاشتراك فى الاشعارات",
+     "build_version":"اصدار التطبيق"
 
 }

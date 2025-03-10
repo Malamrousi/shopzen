@@ -54,6 +54,7 @@
     "build_developer": "Build  Developer",
     "notification": "Notification",
     "subscribed_to_notifications":"You have subscribed to notifications",
-    "unsubscribed_to_notifications":"Notifications have been unsubscribed."
+    "unsubscribed_to_notifications":"Notifications have been unsubscribed.",
+    "build_version":"Build Version"
 
 }
