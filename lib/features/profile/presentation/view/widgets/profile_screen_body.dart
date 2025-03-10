@@ -9,6 +9,7 @@ import 'package:shopzen/features/profile/presentation/view/widgets/build_develop
 import 'package:shopzen/features/profile/presentation/view/widgets/lang_change.dart';
 
 import '../../../../../core/helper/spacing.dart';
+import 'notification_change.dart';
 import 'theme_change.dart';
 import 'user_profile_info.dart';
 import 'user_profile_shimmer.dart';
@@ -52,9 +53,10 @@ class ProfileScreenBody extends StatelessWidget {
             CustomFadeInRight(child: LangChange(), duration: 400),
             verticalSpacing(20.h),
             CustomFadeInRight(child: ThemeChange(), duration: 400),
-                        verticalSpacing(20.h),
-
+            verticalSpacing(20.h),
             CustomFadeInRight(child: BuildDeveloper(), duration: 400),
+            verticalSpacing(20.h),
+            CustomFadeInRight(child: NotificationChange(), duration: 400),
           ],
         ),
       ),

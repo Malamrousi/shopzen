@@ -51,6 +51,9 @@
     "sure": "sure",
     "cancel": "cancel",
     "dark_mode": "Dark Mode",
-    "build_developer": "Build  Developer"
+    "build_developer": "Build  Developer",
+    "notification": "Notification",
+    "subscribed_to_notifications":"You have subscribed to notifications",
+    "unsubscribed_to_notifications":"Notifications have been unsubscribed."
 
 }

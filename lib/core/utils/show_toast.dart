@@ -1,6 +1,6 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:shopzen/core/utils/styles/colors_manger.dart';
 
 class ShowToast {
   const ShowToast._();
@@ -14,8 +14,8 @@ class ShowToast {
         toastLength: Toast.LENGTH_LONG,
         gravity: ToastGravity.TOP,
         timeInSecForIosWeb: seconds ?? 3,
-        backgroundColor: Colors.red,
-        textColor: Colors.white,
+        backgroundColor: ColorsManger.alertColorRed500,
+        textColor: ColorsManger.whiteColor,
         fontSize: 16.sp,
       );
 
@@ -28,8 +28,8 @@ class ShowToast {
         toastLength: Toast.LENGTH_LONG,
         gravity: ToastGravity.TOP,
         timeInSecForIosWeb: seconds ?? 3,
-        backgroundColor: Colors.green,
-        textColor: Colors.white,
+        backgroundColor: ColorsManger.alertColorGreen500,
+        textColor: ColorsManger.whiteColor,
         fontSize: 16.sp,
       );
 }
