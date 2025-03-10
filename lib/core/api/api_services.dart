@@ -20,9 +20,8 @@ abstract class ApiService {
     @Body() Map<String, dynamic> getUser,
   );
 
-  @GET("/api/v1/auth/profile")
+  @GET('/api/v1/auth/profile')
   Future<UserRoleModel> userRole();
-
   @POST("/api/v1/files/upload")
   Future<UploadImageResponse> uploadImage(
     @Body() FormData? file,

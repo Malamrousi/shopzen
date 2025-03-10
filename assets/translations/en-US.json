@@ -1,5 +1,5 @@
 {
-    "shop_zen": "Shop Zen",
+    "shop_zen": "ShopZen",
     "login": "Login",
     "email": "Email",
     "password": "Password",
@@ -44,5 +44,18 @@
     "allow_location": "Allow Location",
     "save_location": "Save Location" ,
     "please_allow_location": "Please allow location",
-    "hello": "Hello"
+    "hello": "Hello",
+    "application_features": "Application Features",
+    "lang_key":"English",
+    "change_language":"Do you want to change the language to Arabic?",
+    "sure": "sure",
+    "cancel": "cancel",
+    "dark_mode": "Dark Mode",
+    "build_developer": "Build  Developer",
+    "notification": "Notification",
+    "subscribed_to_notifications":"You have subscribed to notifications",
+    "unsubscribed_to_notifications":"Notifications have been unsubscribed.",
+    "build_version":"Build Version",
+    "logout":"Logout",
+    "do_you_want_to_logout_from_app":"Do You want to Logout from app?"
 }
