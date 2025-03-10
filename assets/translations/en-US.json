@@ -55,6 +55,7 @@
     "notification": "Notification",
     "subscribed_to_notifications":"You have subscribed to notifications",
     "unsubscribed_to_notifications":"Notifications have been unsubscribed.",
-    "build_version":"Build Version"
-
+    "build_version":"Build Version",
+    "logout":"Logout",
+    "do_you_want_to_logout_from_app":"Do You want to Logout from app?"
 }

@@ -41,7 +41,7 @@ class BuildDeveloper extends StatelessWidget {
                   Icon(
                     Icons.arrow_forward_ios,
                     color: context.colorThemeExtension.textColor,
-                    size: 24.sp,
+                    size: 22.sp,
                   ),
                 ],
               ),

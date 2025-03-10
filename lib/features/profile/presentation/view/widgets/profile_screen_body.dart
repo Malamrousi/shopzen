@@ -8,6 +8,7 @@ import 'package:shopzen/features/profile/presentation/bloc/bloc/profile_bloc.dar
 import 'package:shopzen/features/profile/presentation/view/widgets/build_developer.dart';
 import 'package:shopzen/features/profile/presentation/view/widgets/build_version.dart';
 import 'package:shopzen/features/profile/presentation/view/widgets/lang_change.dart';
+import 'package:shopzen/features/profile/presentation/view/widgets/logout.dart';
 
 import '../../../../../core/helper/spacing.dart';
 import 'notification_change.dart';
@@ -60,6 +61,8 @@ class ProfileScreenBody extends StatelessWidget {
             CustomFadeInRight(child: NotificationChange(), duration: 400),
                         verticalSpacing(20.h),
             CustomFadeInRight(child: BuildVersion(), duration: 400),
+                                    verticalSpacing(20.h),
+            CustomFadeInRight(child: Logout(), duration: 400),
           ],
         ),
       ),

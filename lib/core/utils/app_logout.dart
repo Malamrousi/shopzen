@@ -3,6 +3,8 @@ import 'package:shopzen/core/di/di.dart';
 import 'package:shopzen/core/helper/extension.dart';
 import 'package:shopzen/core/routes/route_name.dart';
 
+import '../secure_storage/secure_storage_keys.dart';
+import '../secure_storage/secure_storage_service.dart';
 import '../shared_pref/shared_pref.dart';
 import '../shared_pref/shared_prefs_key.dart';
 
@@ -19,8 +21,9 @@ class AppLogout {
     final context =
         getIt.get<GlobalKey<NavigatorState>>().currentState!.context;
     await SharedPref().removePreference(PrefKeys.accessToken);
+    await SecureStorageService()
+        .deleteSecureData(SecureStorageKeys.accessToken);
     await SharedPref().removePreference(PrefKeys.userId);
-    if (context.mounted) return;
-    await context.pushNamedAndRemoveUntil(RouteName.login);
+    context.pushNamedAndRemoveUntil(RouteName.login);
   }
 }
