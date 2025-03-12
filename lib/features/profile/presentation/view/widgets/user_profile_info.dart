@@ -8,7 +8,7 @@ import 'package:shopzen/features/auth/data/models/user_role_model.dart';
 
 class UserProfileInfo extends StatelessWidget {
   const UserProfileInfo({super.key, required this.userRoleModel});
-
+  
   final UserRoleModel userRoleModel;
 
   @override
