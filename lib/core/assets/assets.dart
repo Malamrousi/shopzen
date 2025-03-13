@@ -18,6 +18,20 @@ class Assets {
 
   static const String imagesAppIconCircle = "assets/images/app_icon_circle.png";
 
+  static const String imagesBanner1 = "assets/images/banner_1.jpg";
+
+  static const String imagesBanner2 = "assets/images/banner_2.jpg";
+
+  static const String imagesBanner3 = "assets/images/banner_3.jpg";
+
+  static const String imagesBanner4 = "assets/images/banner_4.jpg";
+
+  static const String imagesBanner5 = "assets/images/banner_5.jpg";
+
+  static const String imagesBanner6 = "assets/images/banner_6.jpg";
+
+  static const String imagesBanner7 = "assets/images/banner_7.jpg";
+
   static const String imagesEmptyScreen = "assets/images/empty_screen.png";
 
   static const String imagesOnBoarding = "assets/images/on_boarding.png";
@@ -29,6 +43,10 @@ class Assets {
   static const String imagesSplashScreenAndroid12 = "assets/images/splash_screen_android12.png";
 
   static const String imagesUserAvatar = "assets/images/user_avatar.png";
+
+  static const String map_stylesDarkMapStyles = "assets/map_styles/dark_map_styles.json";
+
+  static const String map_stylesLightMapStyles = "assets/map_styles/light_map_styles.json";
 
   static const String svgAddSucess = "assets/svg/add_sucess.png";
 

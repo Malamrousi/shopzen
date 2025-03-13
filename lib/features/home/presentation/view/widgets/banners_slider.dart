@@ -48,7 +48,6 @@ class _BannersSliderState extends State<BannersSlider> {
             viewportFraction: 1,
             initialPage: 0,
             enableInfiniteScroll: true,
-            reverse: true,
             autoPlay: true,
             autoPlayInterval: Duration(seconds: 3),
             autoPlayAnimationDuration: Duration(milliseconds: 800),

@@ -59,6 +59,8 @@
      "build_version":"اصدار التطبيق",
      "logout":"تسجيل الخروج",
      "do_you_want_to_logout_from_app":"هل تريد تسجيل الخروج من التطبيق؟",
-     "find_your_favorite_items":"ابحث عن العناصر المفضلة لديك"
+     "find_your_favorite_items":"ابحث عن العناصر المفضلة لديك",
+     "categories":"التصنيفات",
+     "view_all":"عرض الكل"
 
 }

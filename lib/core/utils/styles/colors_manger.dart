@@ -48,4 +48,5 @@ class ColorsManger {
   static const Color shadowLightDeep = Color(0xFFB0B0B0); 
   static const Color shadowDarkSoft = Color(0xFF1C2526);  
   static const Color shadowDarkDeep = Color(0xFF151B1C);  
+  static const Color blue50 = Color(0xFFEBEFFFF);
 }
