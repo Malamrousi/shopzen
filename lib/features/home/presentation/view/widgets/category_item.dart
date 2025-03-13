@@ -16,6 +16,8 @@ class CategoryItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      
       children: [
         Container(
           width: 60.w,
@@ -25,17 +27,30 @@ class CategoryItem extends StatelessWidget {
             borderRadius: BorderRadius.circular(8.r),
           ),
           child: Center(
-              child: CachedNetworkImage(
-            width: 50.w,
-            imageUrl:
-                "https://cdn.pixabay.com/photo/2021/10/11/23/49/app-6702045_1280.png",
-            placeholder: (context, url) => CircularProgressIndicator(),
-            errorWidget: (context, url, error) => Icon(Icons.error),
-            fit: BoxFit.fill,
-          )),
+            child: CachedNetworkImage(
+              width: 50.w,
+              imageUrl: image,
+              placeholder: (context, url) =>
+                  Center(child: CircularProgressIndicator()),
+              errorWidget: (context, url, error) => CachedNetworkImage(
+                imageUrl:
+                    "https://cdn.pixabay.com/photo/2021/10/11/23/49/app-6702045_1280.png",
+              ),
+            ),
+          ),
         ),
         verticalSpacing(8.h),
-        Text(title, style: AppTestStyles.font16RegularThemeColor(context)),
+        SizedBox(
+          width:  75.w,
+          height: 50.h,
+          child: Text(
+            title,
+            maxLines: 2,
+            style: AppTestStyles.font14Regular(context),
+            textAlign: TextAlign.center, // عشان النص يترتب في المنتصف
+            overflow: TextOverflow.ellipsis, // لو زاد يقطع بـ "..."
+          ),
+        ),
       ],
     );
   }

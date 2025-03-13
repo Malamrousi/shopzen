@@ -21,10 +21,13 @@ class CategoryShimmer extends StatelessWidget {
                 LoadingShimmer(
                   width: 60.w,
                   height: 70.h,
+                  borderRadius: 8.r,
                 ),
                 verticalSpacing(8.h),
-                LoadingShimmer(height: 20.h, width: 75.w ,
-                borderRadius: 8.r,),
+                LoadingShimmer(
+                  height: 20.h,
+                  width: 75.w,
+                ),
               ],
             );
           },

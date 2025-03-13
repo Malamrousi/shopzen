@@ -5,6 +5,7 @@ import 'package:shopzen/features/auth/data/models/login_response_model.dart';
 import 'package:shopzen/features/auth/data/models/user_role_model.dart';
 
 import '../../features/auth/data/models/sign_up_response_model.dart';
+import '../../features/home/data/model/get_all_categories.dart';
 
 part 'api_services.g.dart';
 
@@ -30,5 +31,9 @@ abstract class ApiService {
   @POST(graphql)
   Future<SignUpResponseModel> signup(
     @Body() Map<String, dynamic> creteUser,
+  );
+    @POST(graphql)
+  Future<GetAllCategoriesResponse> getAllCategories(
+    @Body() Map<String, dynamic> query,
   );
 }

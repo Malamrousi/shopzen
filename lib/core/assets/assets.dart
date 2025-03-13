@@ -34,6 +34,8 @@ class Assets {
 
   static const String imagesEmptyScreen = "assets/images/empty_screen.png";
 
+  static const String imagesNotFoundImage = "assets/images/not_found_image.png";
+
   static const String imagesOnBoarding = "assets/images/on_boarding.png";
 
   static const String imagesPageUnderBuild = "assets/images/page_under_build.jpg";

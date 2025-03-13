@@ -69,4 +69,11 @@ class AppTestStyles {
          color: context.colorThemeExtension.textColor,
         fontFamily: FontFamily.getFontFamily(),
       );
+
+          static TextStyle font14Regular(BuildContext context) => TextStyle(
+        fontSize: 14.sp,
+        fontWeight: FontWeightManger.regular,
+         color: context.colorThemeExtension.textColor,
+        fontFamily: FontFamily.getFontFamily(),
+      );
 }
