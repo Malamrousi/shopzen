@@ -1,29 +1,67 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:shopzen/core/app/app_localizations.dart';
 import 'package:shopzen/features/home/presentation/view/widgets/product_item.dart';
+import 'package:shopzen/features/home/presentation/view/widgets/products_shimmer.dart';
+
+import '../../../../../core/di/di.dart';
+import '../../../../../core/utils/styles/test_styles.dart';
+import '../../bloc/get_all_products/get_all_products_bloc.dart';
 
 class ProductsGridList extends StatelessWidget {
   const ProductsGridList({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return GridView.builder(
-        shrinkWrap: true,
-        physics: const NeverScrollableScrollPhysics(),
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2,
-          crossAxisSpacing: 8.w,
-          mainAxisSpacing: 15.h,
-          childAspectRatio: 165 / 200,
+    return BlocProvider(
+      create: (context) => getIt.get<GetAllProductsBloc>()
+        ..add(
+          GetAllProductsEvent.getAllProduct(),
         ),
-        itemCount: 10,
-        itemBuilder: (context, index) {
-          return ProductItem(
-            imageUrl: "https://th.bing.com/th/id/OIP.KD5TiA6k_Ug8SWjYmxQ4ZgHaIr?rs=1&pid=ImgDetMain",
-            title: "فروله",
-            categoryName: "فواكه",
-            price: 1000,
+      child: BlocBuilder<GetAllProductsBloc, GetAllProductsState>(
+        builder: (context, state) {
+          return state.when(
+            loading: () => SliverToBoxAdapter(
+              child: Center(child: ProductShimmer()),
+            ),
+            success: (products) => SliverPadding(
+              padding: EdgeInsets.symmetric(horizontal: 10.w),
+              sliver: SliverGrid(
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                  crossAxisSpacing: 10.w,
+                  mainAxisSpacing: 10.h,
+                  childAspectRatio: 165 / 250,
+                  
+                ),
+                delegate: SliverChildBuilderDelegate(
+                  (context, index) => ProductItem(
+                    product: products[index], // Pass a single product
+                  ),
+                  childCount: products.length,
+                ),
+              ),
+            ),
+            empty: () => SliverToBoxAdapter(
+              child: Center(
+                child: Text(
+                  "no_products".tr(context),
+                  style: AppTestStyles.font20Bold(context),
+                ),
+              ),
+            ),
+            failure: (failure) => SliverToBoxAdapter(
+              child: Center(
+                child: Text(
+                  "please_try_again_we_have_error".tr(context),
+                  style: AppTestStyles.font20Bold(context),
+                ),
+              ),
+            ),
           );
-        });
+        },
+      ),
+    );
   }
 }

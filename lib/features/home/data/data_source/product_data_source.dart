@@ -2,8 +2,8 @@
 import '../../../../core/api/api_services.dart';
 import '../model/get_all_product.dart';
 
-class HomeDataSource {
-  const HomeDataSource(this.apiService);
+class ProductDataSource {
+  const ProductDataSource(this.apiService);
 
   final ApiService apiService;
 

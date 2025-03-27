@@ -21,7 +21,7 @@ Map<String, dynamic> _$GetAllProductResponseToJson(
 ProductGetAllData _$ProductGetAllDataFromJson(Map<String, dynamic> json) =>
     ProductGetAllData(
       (json['products'] as List<dynamic>)
-          .map((e) => ProductGetAllModel.fromJson(e as Map<String, dynamic>))
+          .map((e) => GetAllProductModel.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
 
@@ -30,8 +30,8 @@ Map<String, dynamic> _$ProductGetAllDataToJson(ProductGetAllData instance) =>
       'products': instance.productsLsit,
     };
 
-ProductGetAllModel _$ProductGetAllModelFromJson(Map<String, dynamic> json) =>
-    ProductGetAllModel(
+GetAllProductModel _$GetAllProductModelFromJson(Map<String, dynamic> json) =>
+    GetAllProductModel(
       json['id'] as String?,
       json['title'] as String?,
       (json['price'] as num?)?.toDouble(),
@@ -43,7 +43,7 @@ ProductGetAllModel _$ProductGetAllModelFromJson(Map<String, dynamic> json) =>
               json['category'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$ProductGetAllModelToJson(ProductGetAllModel instance) =>
+Map<String, dynamic> _$GetAllProductModelToJson(GetAllProductModel instance) =>
     <String, dynamic>{
       'id': instance.id,
       'title': instance.title,

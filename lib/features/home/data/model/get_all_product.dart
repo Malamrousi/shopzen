@@ -11,7 +11,7 @@ class GetAllProductResponse {
 
   final ProductGetAllData data;
 
-  List<ProductGetAllModel> get productGetAllList {
+  List<GetAllProductModel> get productGetAllList {
     if (data.productsLsit.isEmpty) {
       return [];
     }
@@ -27,12 +27,12 @@ class ProductGetAllData {
       _$ProductGetAllDataFromJson(json);
 
   @JsonKey(name: 'products')
-  final List<ProductGetAllModel> productsLsit;
+  final List<GetAllProductModel> productsLsit;
 }
 
 @JsonSerializable()
-class ProductGetAllModel {
-  ProductGetAllModel(
+class GetAllProductModel {
+  GetAllProductModel(
     this.id,
     this.title,
     this.price,
@@ -41,8 +41,8 @@ class ProductGetAllModel {
     this.category,
   );
 
-  factory ProductGetAllModel.fromJson(Map<String, dynamic> json) =>
-      _$ProductGetAllModelFromJson(json);
+  factory GetAllProductModel.fromJson(Map<String, dynamic> json) =>
+      _$GetAllProductModelFromJson(json);
 
   final String? id;
   final String? title;

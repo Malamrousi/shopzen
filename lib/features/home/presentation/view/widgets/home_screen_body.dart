@@ -3,7 +3,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shopzen/core/helper/spacing.dart';
 import 'package:shopzen/features/home/presentation/view/widgets/banners_slider.dart';
 import 'package:shopzen/features/home/presentation/view/widgets/categories_text.dart';
-import 'package:shopzen/features/home/presentation/view/widgets/product_text.dart';
 
 import 'categories_list.dart';
 import 'products_grid_list.dart';
@@ -13,44 +12,28 @@ class HomeScreenBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 10.w),
-      child: CustomScrollView(
-        slivers: [
-          SliverToBoxAdapter(
-            child: verticalSpacing(30.h),
+    return CustomScrollView(
+      slivers: [
+        SliverToBoxAdapter(
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 10.w),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                verticalSpacing(30.h),
+                CategoriesText(),
+                verticalSpacing(5.h),
+                CategoriesList(),
+                verticalSpacing(10.h),
+                BannersSlider(),
+                verticalSpacing(10.h),
+                verticalSpacing(5.h),
+              ],
+            ),
           ),
-         
-    
-          SliverToBoxAdapter(
-            child: CategoriesText(),
-          ),
-          SliverToBoxAdapter(
-            child: verticalSpacing(5.h),
-          ),
-          SliverToBoxAdapter(
-            child: CategoriesList(),
-          ),
-          SliverToBoxAdapter(
-            child: verticalSpacing(10.h),
-          ),
-          SliverToBoxAdapter(
-            child: BannersSlider(),
-          ),
-            SliverToBoxAdapter(
-            child: verticalSpacing(10.h),
-          ),
-            SliverToBoxAdapter(
-            child: ProductText(),
-          ),
-            SliverToBoxAdapter(
-            child: verticalSpacing(5.h),
-          ),
-            SliverToBoxAdapter(
-            child: ProductsGridList(),
-          ),
-        ],
-      ),
+        ),
+        const ProductsGridList(),
+      ],
     );
   }
 }
