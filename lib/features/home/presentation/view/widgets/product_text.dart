@@ -3,16 +3,16 @@ import 'package:shopzen/core/app/app_localizations.dart';
 
 import '../../../../../core/utils/styles/test_styles.dart';
 
-class CategoriesText extends StatelessWidget {
-  const CategoriesText({super.key});
+class ProductText extends StatelessWidget {
+  const ProductText({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return  Row(
+    return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Text(
-          "categories".tr(context),
+          "products".tr(context),
           style: AppTestStyles.font18Bold(context),
         ),
         TextButton(

@@ -41,10 +41,10 @@ class ColorExtension extends ThemeExtension<ColorExtension> {
     mainColor: ColorsManger.whiteColor,
     textColor: ColorsManger.blackColor,
     bottomNavColor: ColorsManger.gray50,
-    containerShadow1: ColorsManger.shadowLightSoft,
-    containerShadow2: ColorsManger.shadowLightDeep,
-    containerLinear1: ColorsManger.whiteColor, 
-    containerLinear2: ColorsManger.gray400,   
+    containerShadow1: ColorsManger.gray300,
+    containerShadow2: ColorsManger.gray200,
+    containerLinear1: ColorsManger.gray50, 
+    containerLinear2: ColorsManger.gray50,   
   );
 
   static const ColorExtension darkColor = ColorExtension(

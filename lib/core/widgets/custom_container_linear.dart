@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shopzen/core/helper/theme_extension.dart';
 
 class CustomContainerLinear extends StatelessWidget {
@@ -19,7 +20,7 @@ class CustomContainerLinear extends StatelessWidget {
       width: width,
       height: height,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(20),
+        borderRadius: BorderRadius.circular(16.r),
         gradient: LinearGradient(
           colors: [
             context.colorThemeExtension.containerLinear1!.withOpacity(0.8),
