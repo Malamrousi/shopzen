@@ -1,12 +1,13 @@
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shopzen/core/app/app_localizations.dart';
-import 'package:shopzen/features/home/presentation/view/widgets/product_item.dart';
 import 'package:shopzen/features/home/presentation/view/widgets/products_shimmer.dart';
 
 import '../../../../../core/di/di.dart';
 import '../../../../../core/utils/styles/test_styles.dart';
+import '../../../../../core/widgets/custom_product_item.dart';
 import '../../bloc/get_all_products/get_all_products_bloc.dart';
 
 class ProductsGridList extends StatelessWidget {
@@ -32,12 +33,12 @@ class ProductsGridList extends StatelessWidget {
                   crossAxisCount: 2,
                   crossAxisSpacing: 10.w,
                   mainAxisSpacing: 10.h,
-                  childAspectRatio: 165 / 250,
-                  
+                  childAspectRatio: 165.w  / 250.h,
                 ),
                 delegate: SliverChildBuilderDelegate(
-                  (context, index) => ProductItem(
-                    product: products[index], // Pass a single product
+                  (context, index) => CustomProductItem(
+                    product: products[index],
+                    productId: int.parse(products[index].id ?? "0"),
                   ),
                   childCount: products.length,
                 ),
