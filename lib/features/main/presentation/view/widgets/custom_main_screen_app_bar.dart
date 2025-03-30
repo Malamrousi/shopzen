@@ -37,7 +37,7 @@ class CustomMainScreenAppBar extends StatelessWidget
                     ),
                     Text(
                       "Mohammed",
-                      style: AppTestStyles.font16Regular(context),
+                      style: AppTestStyles.font18Regular(context),
                     ),
                   ],
                 ),

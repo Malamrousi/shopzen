@@ -12,9 +12,15 @@ import 'package:shopzen/core/utils/location_serviCe.dart';
 import 'package:shopzen/features/auth/data/data_source/auth_data_source.dart';
 import 'package:shopzen/features/auth/data/repo/auth_repo.dart';
 import 'package:shopzen/features/auth/presentation/bloc/auth_bloc/auth_bloc.dart';
+import 'package:shopzen/features/home/data/data_source/product_data_source.dart';
+import 'package:shopzen/features/home/presentation/bloc/get_all_products/get_all_products_bloc.dart';
 import 'package:shopzen/features/main/presentation/bloc/main_cubit/main_cubit_cubit.dart';
 import 'package:shopzen/features/profile/data/data_source/profile_data_source.dart';
 
+import '../../features/home/data/data_source/category_data_source.dart';
+import '../../features/home/data/repo/category_repo.dart';
+import '../../features/home/data/repo/product_repo.dart';
+import '../../features/home/presentation/bloc/get_all_categories/get_all_categories_bloc.dart';
 import '../../features/profile/data/repo/user_info_repo.dart';
 import '../../features/profile/presentation/bloc/bloc/profile_bloc.dart';
 
@@ -56,11 +62,30 @@ Future<void> setupDependencies() async {
   //profile Data Source
   getIt.registerLazySingleton<ProfileDataSource>(
       () => ProfileDataSource(apiService: getIt.get<ApiService>()));
-    //profile Repo
+  //profile Repo
   getIt.registerLazySingleton<UserInfoRepo>(
       () => UserInfoRepo(profileDataSource: getIt.get<ProfileDataSource>()));
 
   getIt.registerFactory<ProfileBloc>(
       () => ProfileBloc(userInfoRepo: getIt.get<UserInfoRepo>()));
-      
+
+  getIt.registerLazySingleton<CategoryDataSource>(() => CategoryDataSource(
+        apiService: getIt.get<ApiService>(),
+      ));
+
+  getIt.registerLazySingleton<CategoryRepo>(() => CategoryRepo(
+        categoryDataSource: getIt.get<CategoryDataSource>(),
+      ));
+
+  getIt.registerFactory<GetAllCategoriesBloc>(() =>
+      GetAllCategoriesBloc(getAllCategoriesRepo: getIt.get<CategoryRepo>()));
+  getIt.registerLazySingleton<ProductDataSource>(
+    () => ProductDataSource(getIt.get<ApiService>()),
+  );
+
+  getIt.registerLazySingleton<ProductRepo>(
+    () => ProductRepo(dataSource: getIt.get<ProductDataSource>()),
+  );
+  getIt.registerFactory<GetAllProductsBloc>(
+      () => GetAllProductsBloc(productRepo: getIt.get<ProductRepo>()));
 }

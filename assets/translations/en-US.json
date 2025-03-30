@@ -57,5 +57,12 @@
     "unsubscribed_to_notifications":"Notifications have been unsubscribed.",
     "build_version":"Build Version",
     "logout":"Logout",
-    "do_you_want_to_logout_from_app":"Do You want to Logout from app?"
+    "do_you_want_to_logout_from_app":"Do You want to Logout from app?",
+    "find_your_favorite_items":"Find your favorite items",
+    "categories":"Categories",
+    "view_all":"View All",
+    "no_categories":"No Categories",
+    "products":"Products",
+    "no_products":"No Products"
+
 }

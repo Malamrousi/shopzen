@@ -3,7 +3,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shopzen/core/app/app_localizations.dart';
 import 'package:shopzen/core/helper/extension.dart';
 import 'package:shopzen/core/helper/theme_extension.dart';
-import 'package:shopzen/core/routes/route_name.dart';
 import 'package:shopzen/core/utils/app_logout.dart';
 
 import '../../../../../core/helper/spacing.dart';
