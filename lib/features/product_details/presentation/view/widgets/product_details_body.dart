@@ -8,10 +8,17 @@ class ProductDetailsBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 10.w),
-      child: Column(
-        children: [
-          
-        ],
+      child: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              children: [
+                
+              ],
+            )
+          ],
+        ),
       ),
     );
   }

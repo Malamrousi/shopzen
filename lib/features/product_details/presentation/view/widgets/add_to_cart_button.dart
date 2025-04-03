@@ -20,10 +20,12 @@ class AddToCartButton extends StatelessWidget {
         height: 100.h,
         width: MediaQuery.sizeOf(context).width,
         decoration: BoxDecoration(
-            color: context.colorThemeExtension.containerLinear1,
-            borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(30.r),
-                topRight: Radius.circular(30.r))),
+          color: context.colorThemeExtension.containerLinear1,
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(30.r),
+            topRight: Radius.circular(30.r),
+          ),
+        ),
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 20.w),
           child: Row(
