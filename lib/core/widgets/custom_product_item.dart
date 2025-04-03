@@ -3,8 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shopzen/core/app/app_localizations.dart';
 import 'package:shopzen/core/helper/extension.dart';
-import 'package:shopzen/core/helper/theme_extension.dart';
 import 'package:shopzen/core/utils/styles/test_styles.dart';
+import 'package:shopzen/core/widgets/custom_favorite_icon.dart';
+import 'package:shopzen/core/widgets/custom_share_icon.dart';
 import 'package:shopzen/features/home/data/model/get_all_product.dart';
 
 import '../../../../../core/routes/route_name.dart';
@@ -35,24 +36,10 @@ class CustomProductItem extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                //Share Button
-                IconButton(
-                  onPressed: () {},
-                  padding: EdgeInsets.zero,
-                  icon: Icon(
-                    Icons.share,
-                    color: context.colorThemeExtension.textColor,
-                  ),
-                ),
+                CustomShareIcon(),
                 //Favorite Button
-                IconButton(
-                  onPressed: () {},
-                  padding: EdgeInsets.zero,
-                  icon: Icon(
-                    Icons.favorite_outline,
-                    color: context.colorThemeExtension.textColor,
-                  ),
-                ),
+              CustomFavoriteIcon(),
+                
               ],
             ),
             // Show Image

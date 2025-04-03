@@ -20,7 +20,7 @@ class  AppTestStyles {
       );
 
   static TextStyle font20BoldWhiteColor(BuildContext context) => TextStyle(
-        fontSize: 18.sp,
+        fontSize: 20.sp,
         fontWeight: FontWeightManger.bold,
         color: ColorsManger.whiteColor,
         fontFamily: FontFamily.getFontFamily(),
@@ -44,7 +44,7 @@ class  AppTestStyles {
         fontFamily: FontFamily.getFontFamily(),
       );
   static TextStyle font20Bold(BuildContext context) => TextStyle(
-        fontSize: 24.sp,
+        fontSize: 20.sp,
         fontWeight: FontWeightManger.bold,
         color: context.colorThemeExtension.textColor,
         fontFamily: FontFamily.getFontFamily(),
