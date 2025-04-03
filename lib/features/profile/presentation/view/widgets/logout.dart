@@ -44,7 +44,7 @@ class Logout extends StatelessWidget {
             children: [
               Text(
                 "logout".tr(context).toLowerCase(),
-                style: AppTestStyles.font16Regular(context),
+                style: AppTestStyles.font16RegularWhiteColor(context),
               ),
               horizontalSpacing(5.w),
               Icon(

@@ -63,6 +63,8 @@
     "view_all":"View All",
     "no_categories":"No Categories",
     "products":"Products",
-    "no_products":"No Products"
+    "no_products":"No Products",
+    "add_to_cart":"Add to Cart",
+    "cart":"Cart"
 
 }

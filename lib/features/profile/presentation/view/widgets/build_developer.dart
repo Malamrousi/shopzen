@@ -35,7 +35,7 @@ class BuildDeveloper extends StatelessWidget {
                 children: [
                   Text(
                     "shop_zen".tr(context),
-                    style: AppTestStyles.font16Regular(context),
+                    style: AppTestStyles.font16RegularWhiteColor(context),
                   ),
                   horizontalSpacing(5.w),
                   Icon(

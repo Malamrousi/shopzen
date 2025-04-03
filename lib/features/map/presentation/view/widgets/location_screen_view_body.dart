@@ -35,7 +35,7 @@ class LocationScreenViewBody extends StatelessWidget {
             Text( 
               textAlign: TextAlign.center,
               "we_need_your_location".tr(context),
-              style: AppTestStyles.font16Regular(context),
+              style: AppTestStyles.font16RegularWhiteColor(context),
             ),
             verticalSpacing(48),
             CustomButton(
@@ -43,7 +43,7 @@ class LocationScreenViewBody extends StatelessWidget {
                 context.pushNamedAndRemoveUntil(RouteName.map);
               },
               title: "allow_location".tr(context),
-              textStyle: AppTestStyles.font16Regular(context),
+              textStyle: AppTestStyles.font16RegularWhiteColor(context),
             )
           ],
         ),

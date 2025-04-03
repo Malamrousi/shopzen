@@ -36,7 +36,7 @@ class UserProfileInfo extends StatelessWidget {
         verticalSpacing(8.h),
         Text(
           "m.alamrousi.work2@gmail.com".toLowerCase().toCapitalized(),
-          style: AppTestStyles.font16Regular(context),
+          style: AppTestStyles.font16RegularWhiteColor(context),
         ),
       ],
     );

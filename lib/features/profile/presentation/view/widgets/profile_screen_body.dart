@@ -40,7 +40,7 @@ class ProfileScreenBody extends StatelessWidget {
                       failure: (message) {
                         return Text(
                           "please_try_again_we_have_error".tr(context),
-                          style: AppTestStyles.font16Regular(context),
+                          style: AppTestStyles.font16RegularWhiteColor(context),
                         );
                       });
                 },

@@ -60,7 +60,7 @@ class SignUpButton extends StatelessWidget {
             },
             title: "signup".tr(context),
             backgroundColor: ColorsManger.primaryColor400,
-            textStyle: AppTestStyles.font16Regular(context),
+            textStyle: AppTestStyles.font16RegularWhiteColor(context),
           ),
         );
       },
