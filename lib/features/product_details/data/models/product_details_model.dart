@@ -15,8 +15,8 @@ class ProductDetailsResponse {
 
 @JsonSerializable()
 class ProductDetailsData {
- @JsonKey(name: 'product')
-  final ProductDetailsModel productDetailsModel;
+  @JsonKey(name: 'product')
+    final ProductDetailsModel productDetailsModel;
 
   ProductDetailsData({required this.productDetailsModel});
 
@@ -28,19 +28,15 @@ class ProductDetailsData {
 
 class ProductDetailsModel {
 
-  final String id;
-  final String title;
-  final String price;
-  final String description;
+  final String? title;
+  final double? price;
   final List<String> images;
-  final String image;
+  final String? description;
   ProductDetailsModel({
-    required this.id,
     required this.title,
     required this.price,
     required this.description,
     required this.images,
-    required this.image,
   });
 
   factory ProductDetailsModel.fromJson(Map<String, dynamic> json) =>

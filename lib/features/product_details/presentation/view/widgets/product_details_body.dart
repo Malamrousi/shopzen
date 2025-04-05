@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:shopzen/features/product_details/data/models/product_details_model.dart';
 
 import '../../../../../core/helper/spacing.dart';
 import '../../../../../core/utils/styles/test_styles.dart';
@@ -8,7 +9,9 @@ import '../../../../../core/widgets/custom_share_icon.dart';
 import 'product_details_image_slider.dart';
 
 class ProductDetailsBody extends StatelessWidget {
-  const ProductDetailsBody({super.key});
+  const ProductDetailsBody({super.key, required this.productDetailsModel});
+
+  final ProductDetailsModel productDetailsModel;
 
   @override
   Widget build(BuildContext context) {
@@ -26,13 +29,14 @@ class ProductDetailsBody extends StatelessWidget {
               ],
             ),
             verticalSpacing(10.h),
-            ProductDetailsImageSlider(),
+            ProductDetailsImageSlider(
+              imageList: productDetailsModel.images,
+            ),
             verticalSpacing(20.h),
-            Text("Modern Minimalist Workstation Setup",
+            Text(productDetailsModel.title ?? '',
                 style: AppTestStyles.font20Bold(context)),
             verticalSpacing(10.h),
-            Text(
-                "Elevate your home office with our Modern Minimalist Workstation Setup, featuring a sleek wooden desk topped with an elegahhnt computer, stylish adjustable wooden desk lamp, and complimentary accessories for a clean, productive workspace. This setup is perfect for professionals seeking a contemporary look that combines functionality with design.",
+            Text(productDetailsModel.description ?? '',
                 style: AppTestStyles.font14Regular(context)),
           ],
         ),

@@ -6,25 +6,21 @@ import 'package:shopzen/core/animations/animate_do.dart';
 import '../../../../../core/helper/spacing.dart';
 
 class ProductDetailsImageSlider extends StatefulWidget {
-  const ProductDetailsImageSlider({super.key});
-  
+  const ProductDetailsImageSlider({super.key, required this.imageList});
+
+  final List<String> imageList;
+
   @override
-  State<ProductDetailsImageSlider> createState() => _ProductDetailsImageSliderState();
+  State<ProductDetailsImageSlider> createState() =>
+      _ProductDetailsImageSliderState();
 }
 
 class _ProductDetailsImageSliderState extends State<ProductDetailsImageSlider> {
   int activeIndex = 0;
-  final CarouselSliderController carouselController = CarouselSliderController();
-  
-List<String> imageList = [
-    "https://d2v5dzhdg4zhx3.cloudfront.net/web-assets/images/storypages/primary/ProductShowcasesampleimages/JPEG/Product+Showcase-1.jpg",
-    "https://th.bing.com/th/id/OIP.JN2YuhRiEVw4-QjfLIBHkgHaE8?rs=1&pid=ImgDetMain",
-    "https://th.bing.com/th/id/OIP.dmN7KjgwBX3J6Fcqukt4rQHaEN?rs=1&pid=ImgDetMain",
-    "https://th.bing.com/th/id/OIP.6-juEx2608vTmrRMAPgRGQHaE8?rs=1&pid=ImgDetMain",
-    "https://th.bing.com/th/id/OIP.zJcerO1OR1nSb_UEkRx_aAHaHa?rs=1&pid=ImgDetMain",
-    "https://th.bing.com/th/id/OIP.R0jqOIWvY2usT68_fMjuYgHaHg?w=863&h=874&rs=1&pid=ImgDetMain",
-    "https://th.bing.com/th/id/OIP.wMftsrP6USIHg4aMEpwnPQHaHa?rs=1&pid=ImgDetMain",
-  ];
+  final CarouselSliderController carouselController =
+      CarouselSliderController();
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +30,7 @@ List<String> imageList = [
         children: [
           CarouselSlider.builder(
             carouselController: carouselController,
-            itemCount: imageList.length,
+            itemCount:widget. imageList.length,
             itemBuilder: (context, int itemIndex, int pageViewIndex) {
               return Container(
                 width: double.infinity,
@@ -44,7 +40,7 @@ List<String> imageList = [
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(15.r),
                   child: CachedNetworkImage(
-                    imageUrl: imageList[itemIndex],
+                    imageUrl: widget. imageList[itemIndex],
                     fit: BoxFit.cover,
                     width: double.infinity,
                     height: 250.h,
@@ -65,7 +61,7 @@ List<String> imageList = [
               viewportFraction: 1,
               initialPage: 0,
               enableInfiniteScroll: true,
-              autoPlay: true, 
+              autoPlay: true,
               enlargeCenterPage: true,
               enlargeFactor: 0.3,
               scrollDirection: Axis.horizontal,
@@ -76,9 +72,7 @@ List<String> imageList = [
               },
             ),
           ),
-          
           verticalSpacing(15.h),
-          
           Container(
             height: 70.h,
             padding: EdgeInsets.symmetric(horizontal: 10.w),
@@ -86,7 +80,7 @@ List<String> imageList = [
               scrollDirection: Axis.horizontal,
               child: Row(
                 children: List.generate(
-                  imageList.length,
+                  widget. imageList.length,
                   (index) => GestureDetector(
                     onTap: () {
                       carouselController.animateToPage(index);
@@ -101,8 +95,8 @@ List<String> imageList = [
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(8.r),
                         border: Border.all(
-                          color: activeIndex == index 
-                              ? Colors.blue 
+                          color: activeIndex == index
+                              ? Colors.blue
                               : Colors.transparent,
                           width: 2,
                         ),
@@ -110,7 +104,7 @@ List<String> imageList = [
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(6.r),
                         child: CachedNetworkImage(
-                          imageUrl: imageList[index],
+                          imageUrl: widget. imageList[index],
                           fit: BoxFit.cover,
                           errorWidget: (context, url, error) => const Icon(
                             Icons.error,

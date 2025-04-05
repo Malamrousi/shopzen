@@ -10,7 +10,7 @@ import 'package:shopzen/core/widgets/custom_button.dart';
 class AddToCartButton extends StatelessWidget {
   const AddToCartButton({super.key, required this.price});
 
-  final num price;
+  final String price;
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +32,7 @@ class AddToCartButton extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                "\$${price.toStringAsFixed(2)}",
+                "\$${price}",
                 style: AppTestStyles.font20Bold(context),
               ),
               CustomButton(
