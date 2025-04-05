@@ -67,12 +67,11 @@ Route<dynamic> generateRoute(RouteSettings settings) {
           url: argument as String,
         ),
       );
-         case RouteName.productDetails:
+    case RouteName.productDetails:
       return BaseRoute(
-        page:  ProductDetails(
+        page: ProductDetails(
           productId: argument as int,
         ),
-
       );
     default:
       return MaterialPageRoute(builder: (_) => PageUnderBuildScreen());

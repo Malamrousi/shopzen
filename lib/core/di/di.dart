@@ -15,6 +15,10 @@ import 'package:shopzen/features/auth/presentation/bloc/auth_bloc/auth_bloc.dart
 import 'package:shopzen/features/home/data/data_source/product_data_source.dart';
 import 'package:shopzen/features/home/presentation/bloc/get_all_products/get_all_products_bloc.dart';
 import 'package:shopzen/features/main/presentation/bloc/main_cubit/main_cubit_cubit.dart';
+import 'package:shopzen/features/product_details/data/data_source/product_details_data_source.dart';
+import 'package:shopzen/features/product_details/data/repo/product_details_repo.dart';
+import 'package:shopzen/features/product_details/presentation/bloc/product_details/product_details_bloc.dart';
+import 'package:shopzen/features/product_details/presentation/view/product_details.dart';
 import 'package:shopzen/features/profile/data/data_source/profile_data_source.dart';
 
 import '../../features/home/data/data_source/category_data_source.dart';
@@ -88,4 +92,14 @@ Future<void> setupDependencies() async {
   );
   getIt.registerFactory<GetAllProductsBloc>(
       () => GetAllProductsBloc(productRepo: getIt.get<ProductRepo>()));
+
+        getIt.registerLazySingleton<ProductDetailsDataSource>(
+    () => ProductDetailsDataSource(apiService:  getIt.get<ApiService>()),
+  );
+    getIt.registerLazySingleton<ProductDetailsRepo>(
+    () => ProductDetailsRepo(productDetailsDataSource: getIt.get<ProductDetailsDataSource>()),
+  );
+  getIt.registerFactory<ProductDetailsBloc>(
+      () => ProductDetailsBloc(productDetailsRepo: getIt.get<ProductDetailsRepo>()));
+
 }
