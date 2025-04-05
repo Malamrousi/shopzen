@@ -16,12 +16,14 @@ class _ProductDetailsImageSliderState extends State<ProductDetailsImageSlider> {
   int activeIndex = 0;
   final CarouselSliderController carouselController = CarouselSliderController();
   
-  List<String> imageList = [
+List<String> imageList = [
     "https://d2v5dzhdg4zhx3.cloudfront.net/web-assets/images/storypages/primary/ProductShowcasesampleimages/JPEG/Product+Showcase-1.jpg",
     "https://th.bing.com/th/id/OIP.JN2YuhRiEVw4-QjfLIBHkgHaE8?rs=1&pid=ImgDetMain",
     "https://th.bing.com/th/id/OIP.dmN7KjgwBX3J6Fcqukt4rQHaEN?rs=1&pid=ImgDetMain",
     "https://th.bing.com/th/id/OIP.6-juEx2608vTmrRMAPgRGQHaE8?rs=1&pid=ImgDetMain",
     "https://th.bing.com/th/id/OIP.zJcerO1OR1nSb_UEkRx_aAHaHa?rs=1&pid=ImgDetMain",
+    "https://th.bing.com/th/id/OIP.R0jqOIWvY2usT68_fMjuYgHaHg?w=863&h=874&rs=1&pid=ImgDetMain",
+    "https://th.bing.com/th/id/OIP.wMftsrP6USIHg4aMEpwnPQHaHa?rs=1&pid=ImgDetMain",
   ];
 
   @override

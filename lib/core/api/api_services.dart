@@ -7,6 +7,7 @@ import 'package:shopzen/features/auth/data/models/user_role_model.dart';
 import '../../features/auth/data/models/sign_up_response_model.dart';
 import '../../features/home/data/model/get_all_categories.dart';
 import '../../features/home/data/model/get_all_product.dart';
+import '../../features/product_details/data/models/product_details_model.dart';
 
 part 'api_services.g.dart';
 
@@ -39,6 +40,10 @@ abstract class ApiService {
   );
   @POST(graphql)
   Future<GetAllProductResponse> getAllProduct(
+    @Body() Map<String, dynamic> query,
+  );
+    @POST(graphql)
+  Future<ProductDetailsResponse> getProductDetails(
     @Body() Map<String, dynamic> query,
   );
 }
