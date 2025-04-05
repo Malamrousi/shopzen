@@ -16,9 +16,9 @@ class ProductShimmer extends StatelessWidget {
         physics: const NeverScrollableScrollPhysics(),
         itemCount: 10,
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2, //Number of cloums
-          crossAxisSpacing: 8, // Spacing between colums
-          mainAxisSpacing: 15, //Spacing between rows
+          crossAxisCount: 2, 
+          crossAxisSpacing: 8, 
+          mainAxisSpacing: 15, 
           childAspectRatio: 165 / 250,
         ),
         itemBuilder: (context, index) {

@@ -66,7 +66,7 @@ class AppTextFormFiled extends StatelessWidget {
           suffixIcon: suffixIcon,
           prefixIcon: prefixIcon,
           hintStyle: hintStyle ??
-              AppTestStyles.font16Regular(context)
+              AppTestStyles.font16RegularWhiteColor(context)
                   .copyWith(color: ColorsManger.gray500)),
       style: AppTestStyles.font16RegularThemeColor(context),
     );

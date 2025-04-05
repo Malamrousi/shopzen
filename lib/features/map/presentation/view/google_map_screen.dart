@@ -74,7 +74,7 @@ class _GoogleMapScreenState extends State<GoogleMapScreen> {
                 child: CustomButton(
                   onPressed: saveUserLocation,
                   title: "save_location".tr(context),
-                  textStyle: AppTestStyles.font16Regular(context),
+                  textStyle: AppTestStyles.font16RegularWhiteColor(context),
                   backgroundColor: ColorsManger.primaryColor700,
                 ),
               ),

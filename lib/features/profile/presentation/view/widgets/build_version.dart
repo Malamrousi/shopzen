@@ -31,7 +31,7 @@ class BuildVersion extends StatelessWidget {
             if (snapshot.hasData) {
             return  Text(
                 snapshot.data.toString(),
-                style: AppTestStyles.font16Regular(context),
+                style: AppTestStyles.font16RegularWhiteColor(context),
               );
             } else {
               return SizedBox.shrink();

@@ -42,7 +42,7 @@ class CustomDialog {
             bottomWidth: 320.w,
             bottomHeight: 45.h,
             borderRadius: 10,
-            textStyle: AppTestStyles.font16Regular(context),
+            textStyle: AppTestStyles.font16RegularWhiteColor(context),
           ),
           SizedBox(height: 10.h, width: 1.w),
           CustomButton(
@@ -54,7 +54,7 @@ class CustomDialog {
             bottomWidth: 320.w,
             bottomHeight: 45.h,
             borderRadius: 10,
-            textStyle: AppTestStyles.font16Regular(context),
+            textStyle: AppTestStyles.font16RegularWhiteColor(context),
           ),
         ],
       ),

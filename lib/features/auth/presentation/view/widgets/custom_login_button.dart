@@ -66,7 +66,7 @@ class CustomLoginButton extends StatelessWidget {
                   },
                   title: "login".tr(context),
                   backgroundColor: ColorsManger.primaryColor400,
-                  textStyle: AppTestStyles.font16Regular(context),
+                  textStyle: AppTestStyles.font16RegularWhiteColor(context),
                 ));
       },
     );

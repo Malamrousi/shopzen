@@ -14,21 +14,27 @@ class  AppTestStyles {
       );
   static TextStyle font18Bold(BuildContext context) => TextStyle(
         fontSize: 18.sp,
-        fontWeight: FontWeightManger.medium,
+        fontWeight: FontWeightManger.bold,
         color: context.colorThemeExtension.textColor,
         fontFamily: FontFamily.getFontFamily(),
       );
 
   static TextStyle font20BoldWhiteColor(BuildContext context) => TextStyle(
-        fontSize: 18.sp,
+        fontSize: 20.sp,
         fontWeight: FontWeightManger.bold,
         color: ColorsManger.whiteColor,
         fontFamily: FontFamily.getFontFamily(),
       );
-  static TextStyle font16Regular(BuildContext context) => TextStyle(
+  static TextStyle font16RegularWhiteColor(BuildContext context) => TextStyle(
         fontSize: 16.sp,
         fontWeight: FontWeightManger.regular,
-        color: ColorsManger.gray50,
+        color: ColorsManger.whiteColor,
+        fontFamily: FontFamily.getFontFamily(),
+      );
+        static TextStyle font16BoldWhiteColor(BuildContext context) => TextStyle(
+        fontSize: 16.sp,
+        fontWeight: FontWeightManger.bold,
+        color: ColorsManger.whiteColor,
         fontFamily: FontFamily.getFontFamily(),
       );
        static TextStyle font16RegularThemeColor(BuildContext context) => TextStyle(
@@ -38,7 +44,7 @@ class  AppTestStyles {
         fontFamily: FontFamily.getFontFamily(),
       );
   static TextStyle font20Bold(BuildContext context) => TextStyle(
-        fontSize: 24.sp,
+        fontSize: 20.sp,
         fontWeight: FontWeightManger.bold,
         color: context.colorThemeExtension.textColor,
         fontFamily: FontFamily.getFontFamily(),

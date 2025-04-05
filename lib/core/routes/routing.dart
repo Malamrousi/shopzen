@@ -15,6 +15,7 @@ import 'package:shopzen/features/main/presentation/view/main_screen.dart';
 import 'package:shopzen/features/map/presentation/view/google_map_screen.dart';
 import 'package:shopzen/features/map/presentation/view/location_screen.dart';
 import 'package:shopzen/features/on_boarding/presentation/view/on_boarding_screen.dart';
+import 'package:shopzen/features/product_details/presentation/view/product_details.dart';
 
 Route<dynamic> generateRoute(RouteSettings settings) {
   final argument = settings.arguments;
@@ -64,6 +65,12 @@ Route<dynamic> generateRoute(RouteSettings settings) {
       return BaseRoute(
         page: CustomWebView(
           url: argument as String,
+        ),
+      );
+    case RouteName.productDetails:
+      return BaseRoute(
+        page: ProductDetails(
+          productId: argument as int,
         ),
       );
     default:

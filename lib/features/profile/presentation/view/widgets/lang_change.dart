@@ -48,7 +48,7 @@ class LangChange extends StatelessWidget {
                 children: [
                   Text(
                     "lang_key".tr(context),
-                    style: AppTestStyles.font16Regular(context),
+                    style: AppTestStyles.font16RegularWhiteColor(context),
                   ),
                   horizontalSpacing(5.w),
                   Icon(
