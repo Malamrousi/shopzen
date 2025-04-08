@@ -37,6 +37,18 @@ class  AppTestStyles {
         color: ColorsManger.whiteColor,
         fontFamily: FontFamily.getFontFamily(),
       );
+        static TextStyle font16BoldThemeColor(BuildContext context) => TextStyle(
+        fontSize: 16.sp,
+        fontWeight: FontWeightManger.bold,
+        color: context.colorThemeExtension.textColor,
+        fontFamily: FontFamily.getFontFamily(),
+      );
+         static TextStyle font14BoldThemeColor(BuildContext context) => TextStyle(
+        fontSize: 14.sp,
+        fontWeight: FontWeightManger.bold,
+        color: context.colorThemeExtension.textColor,
+        fontFamily: FontFamily.getFontFamily(),
+      );
        static TextStyle font16RegularThemeColor(BuildContext context) => TextStyle(
         fontSize: 16.sp,
         fontWeight: FontWeightManger.regular,

@@ -2,16 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shopzen/core/app/app_localizations.dart';
-import 'package:shopzen/core/helper/extension.dart';
 import 'package:shopzen/core/helper/theme_extension.dart';
-import 'package:shopzen/core/utils/styles/colors_manger.dart';
 import 'package:shopzen/core/utils/styles/test_styles.dart';
 
 import '../../../../../core/animations/animate_do.dart';
-import '../../../../../core/routes/route_name.dart';
 import '../../../../../core/utils/nav_bar_enum.dart';
 import '../../bloc/main_cubit/main_cubit_cubit.dart';
-import 'package:badges/badges.dart' as badges;
 
 import 'notification_bar_icon.dart';  
 class CustomMainScreenAppBar extends StatelessWidget
