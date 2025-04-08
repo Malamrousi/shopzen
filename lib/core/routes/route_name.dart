@@ -8,6 +8,7 @@ class RouteName {
   static const String map = "/map";
   static const String webView = "/webView";
   static const String productDetails = "/productDetails";
+  static const String notification = "/notification";
   
   
 }
