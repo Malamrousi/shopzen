@@ -18,18 +18,17 @@ if (localPropertiesFile.exists()) {
 
 android {
     namespace = "com.example.shopzen"
-    compileSdk = 33
+    compileSdk = 35
     ndkVersion = flutter.ndkVersion
 
     compileOptions {
-      sourceCompatibility = JavaVersion.VERSION_11
-    targetCompatibility = JavaVersion.VERSION_11
-        isCoreLibraryDesugaringEnabled = true
-
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
+        coreLibraryDesugaringEnabled = true  // تم تصحيح الخاصية هنا
     }
 
     kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_1_8
+        jvmTarget = "11"  // تم تعديله ليتوافق مع Java 11
     }
 
     defaultConfig {
@@ -56,7 +55,7 @@ flutter {
 }
 
 dependencies {
-coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.1.4")
- implementation("androidx.window:window:1.0.0")
-implementation("androidx.window:window-java:1.0.0")
+    coreLibraryDesugaring "com.android.tools:desugar_jdk_libs:2.1.4"  // تم تعديل الإصدار للتوافق
+    implementation "androidx.window:window:1.0.0"
+    implementation "androidx.window:window-java:1.0.0"
 }

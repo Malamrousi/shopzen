@@ -7,6 +7,7 @@ import 'package:shopzen/core/app/bloc_observer.dart';
 import 'package:shopzen/core/app/env_variables.dart';
 import 'package:shopzen/core/di/di.dart';
 import 'package:shopzen/core/notification/firebase_cloud%20_messaging.dart';
+import 'package:shopzen/core/notification/local_notifications.dart';
 import 'package:shopzen/core/secure_storage/secure_storage_service.dart';
 import 'package:shopzen/core/shared_pref/shared_pref.dart';
 import 'package:shopzen/firebase_options.dart';
@@ -23,6 +24,7 @@ void main() async {
   await SharedPref().instantiatePreferences();
 await FirebaseCloudMessaging().init();
   await SecureStorageService().instantiateSecureStorage();
+  await LocalNotifications.initializeNotifications();
 
   Bloc.observer = AppBlocObserver();
 
