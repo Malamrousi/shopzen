@@ -37,4 +37,3 @@ class MainScreenViewBody extends StatelessWidget {
     );
   }
 }
-s
