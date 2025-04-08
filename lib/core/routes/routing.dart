@@ -73,6 +73,7 @@ Route<dynamic> generateRoute(RouteSettings settings) {
           productId: argument as int,
         ),
       );
+      
     default:
       return MaterialPageRoute(builder: (_) => PageUnderBuildScreen());
   }

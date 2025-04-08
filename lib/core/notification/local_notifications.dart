@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 
 class LocalNotifications {
@@ -6,7 +8,9 @@ class LocalNotifications {
 
   static Future<void> initializeNotifications() async {
     const AndroidInitializationSettings androidInitializationSettings =
-        AndroidInitializationSettings('@mipmap/ic_launcher');
+        AndroidInitializationSettings(
+      '@mipmap/ic_launcher',
+    );
     ;
     const DarwinInitializationSettings iOSInitializationSettings =
         DarwinInitializationSettings(
@@ -23,25 +27,29 @@ class LocalNotifications {
         onDidReceiveBackgroundNotificationResponse: onTapNotification);
   }
 
+  static StreamController<NotificationResponse> streamController =
+      StreamController<NotificationResponse>();
+
   static void onTapNotification(NotificationResponse? notificationResponse) {
-    print(
-        'Notification clicked with payload: ${notificationResponse!.payload}');
+    streamController.add(notificationResponse!);
   }
 
-  Future<void> showNotification() async {
+  static Future<void> showNotification({required String title , required String body , required String payload}) async {
     final AndroidNotificationDetails androidDetails =
-        AndroidNotificationDetails('shopZan_ID', 'shopZan',
-            importance: Importance.max, priority: Priority.high);
-            final DarwinNotificationDetails iOSDetails = DarwinNotificationDetails(
-              presentAlert: true,
-              presentBadge: true,
-              presentSound: true
-            );
+        AndroidNotificationDetails(
+      'shopZan_ID',
+      'shopZan',
+      importance: Importance.max,
+      priority: Priority.high,
+    );
+    final DarwinNotificationDetails iOSDetails = DarwinNotificationDetails(
+        presentAlert: true, presentBadge: true, presentSound: true);
     NotificationDetails notificationDetails = NotificationDetails(
       android: androidDetails,
       iOS: iOSDetails,
     );
     await flutterLocalNotificationsPlugin.show(
-        0, "Notification Title", "Notification Body", notificationDetails);
+        0, title, body, notificationDetails,
+        payload: payload);
   }
 }
