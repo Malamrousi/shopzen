@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -18,11 +20,20 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await dotenv.load(fileName: ".env");
 
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
-  );
+  Platform.isAndroid
+      ? await Firebase.initializeApp(
+          options: DefaultFirebaseOptions.currentPlatform,
+        ).whenComplete(()  {
+           FirebaseCloudMessaging().init();
+           LocalNotifications.initializeNotifications();
+        })
+      : await Firebase.initializeApp().whenComplete(()  {
+  FirebaseCloudMessaging().init();
+           LocalNotifications.initializeNotifications();
+      });
+  ;
   await SharedPref().instantiatePreferences();
-await FirebaseCloudMessaging().init();
+  await FirebaseCloudMessaging().init();
   await SecureStorageService().instantiateSecureStorage();
   await LocalNotifications.initializeNotifications();
 

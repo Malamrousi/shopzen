@@ -1,6 +1,10 @@
 import 'dart:async';
 
+import 'package:flutter/material.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
+import 'package:shopzen/core/routes/route_name.dart';
+
+import '../di/di.dart';
 
 class LocalNotifications {
   static FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
@@ -27,14 +31,20 @@ class LocalNotifications {
         onDidReceiveBackgroundNotificationResponse: onTapNotification);
   }
 
-  static StreamController<NotificationResponse> streamController =
-      StreamController<NotificationResponse>();
+
 
   static void onTapNotification(NotificationResponse? notificationResponse) {
-    streamController.add(notificationResponse!);
+    if(int.parse(notificationResponse!.payload.toString()) != -1) {
+      getIt<GlobalKey<NavigatorState>>().currentState!.pushNamed(
+          RouteName.productDetails,
+          arguments: int.parse(notificationResponse.payload.toString()));
+    };
   }
 
-  static Future<void> showNotification({required String title , required String body , required String payload}) async {
+  static Future<void> showNotification(
+      {required String title,
+      required String body,
+      required String payload}) async {
     final AndroidNotificationDetails androidDetails =
         AndroidNotificationDetails(
       'shopZan_ID',
@@ -48,8 +58,7 @@ class LocalNotifications {
       android: androidDetails,
       iOS: iOSDetails,
     );
-    await flutterLocalNotificationsPlugin.show(
-        0, title, body, notificationDetails,
-        payload: payload);
+    await flutterLocalNotificationsPlugin
+        .show(0, title, body, notificationDetails, payload: payload);
   }
 }

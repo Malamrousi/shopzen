@@ -17,21 +17,24 @@ class FirebaseMessagingNavigator {
   }
 
   //Back Ground Notification
- static Future<void> BackgroundNotification(RemoteMessage? message) async {
+  static Future<void> BackgroundNotification(RemoteMessage? message) async {
     if (message != null) {
       _navigate(message);
     }
   }
 
- static Future<void> _navigate(RemoteMessage message) async {
-    await getIt<GlobalKey<NavigatorState>>().currentState!.pushNamed(
+  static void _navigate(RemoteMessage message) {
+    if (int.parse(message.data['productId'].toString()) == -1) {
+      return;
+    }
+    getIt<GlobalKey<NavigatorState>>().currentState!.pushNamed(
         RouteName.productDetails,
         arguments: int.parse(message.data['productId'] ?? ''));
   }
 
   //Terminated Notification
 
-static  Future<void> TerminatedNotification(RemoteMessage? message) async {
+  static Future<void> TerminatedNotification(RemoteMessage? message) async {
     if (message != null) {
       _navigate(message);
     }
