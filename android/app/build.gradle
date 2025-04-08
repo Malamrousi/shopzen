@@ -18,16 +18,17 @@ if (localPropertiesFile.exists()) {
 
 android {
     namespace = "com.example.shopzen"
-    compileSdk = flutter.compileSdkVersion
+    compileSdk = 35
     ndkVersion = flutter.ndkVersion
 
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
+        coreLibraryDesugaringEnabled = true  // تم تصحيح الخاصية هنا
     }
 
     kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_1_8
+        jvmTarget = "11"  // تم تعديله ليتوافق مع Java 11
     }
 
     defaultConfig {
@@ -36,7 +37,8 @@ android {
         targetSdk = flutter.targetSdkVersion
         versionCode = flutter.versionCode
         versionName = flutter.versionName
-        
+        multiDexEnabled = true
+
         // Add Google Maps API key from local.properties
         resValue "string", "GOOGLE_MAPS_API_KEY", localProperties.getProperty('MAPS_API_KEY', "")
     }
@@ -53,5 +55,7 @@ flutter {
 }
 
 dependencies {
-    // Add any dependencies if needed
+    coreLibraryDesugaring "com.android.tools:desugar_jdk_libs:2.1.4"  // تم تعديل الإصدار للتوافق
+    implementation "androidx.window:window:1.0.0"
+    implementation "androidx.window:window-java:1.0.0"
 }

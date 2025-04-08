@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -7,6 +9,7 @@ import 'package:shopzen/core/app/bloc_observer.dart';
 import 'package:shopzen/core/app/env_variables.dart';
 import 'package:shopzen/core/di/di.dart';
 import 'package:shopzen/core/notification/firebase_cloud%20_messaging.dart';
+import 'package:shopzen/core/notification/local_notifications.dart';
 import 'package:shopzen/core/secure_storage/secure_storage_service.dart';
 import 'package:shopzen/core/shared_pref/shared_pref.dart';
 import 'package:shopzen/firebase_options.dart';
@@ -17,12 +20,22 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await dotenv.load(fileName: ".env");
 
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
-  );
+  Platform.isAndroid
+      ? await Firebase.initializeApp(
+          options: DefaultFirebaseOptions.currentPlatform,
+        ).whenComplete(()  {
+           FirebaseCloudMessaging().init();
+           LocalNotifications.initializeNotifications();
+        })
+      : await Firebase.initializeApp().whenComplete(()  {
+  FirebaseCloudMessaging().init();
+           LocalNotifications.initializeNotifications();
+      });
+  ;
   await SharedPref().instantiatePreferences();
-await FirebaseCloudMessaging().init();
+  await FirebaseCloudMessaging().init();
   await SecureStorageService().instantiateSecureStorage();
+  await LocalNotifications.initializeNotifications();
 
   Bloc.observer = AppBlocObserver();
 

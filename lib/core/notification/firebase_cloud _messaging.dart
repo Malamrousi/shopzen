@@ -4,6 +4,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:shopzen/core/app/app_localizations.dart';
+import 'package:shopzen/core/notification/firebase_messaging_navIGator.dart';
 import 'package:shopzen/core/utils/show_toast.dart';
 
 class FirebaseCloudMessaging {
@@ -19,6 +20,23 @@ class FirebaseCloudMessaging {
   Future<void> init() async {
     try {
       await permissionNotification();
+      //Foreground Notification
+
+      FirebaseMessaging.onMessage.listen((message) {
+        FirebaseMessagingNavigator.RemoteNotification(message);
+      });
+
+      //Background Notification
+
+      FirebaseMessaging.onMessageOpenedApp.listen((message) {
+        FirebaseMessagingNavigator.BackgroundNotification(message);
+      });
+
+      //terminated Notification
+
+      FirebaseMessaging.instance.getInitialMessage().then((message) {
+        FirebaseMessagingNavigator.TerminatedNotification(message);
+      });
     } catch (e) {
       dev.log('Error initializing FCM: $e');
     }
