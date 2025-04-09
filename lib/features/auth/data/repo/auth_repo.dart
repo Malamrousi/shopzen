@@ -35,4 +35,7 @@ class AuthRepo {
       return  ApiResult.failure(error.toString());
     }
   }
+  Future<void> addUserIdToFirebase({required String userId}) async {
+    await authDataSource.addUserIdToFirebase(userId: userId);
+  }
 }

@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:shopzen/core/helper/extension.dart';
-import 'package:shopzen/core/notification/local_notifications.dart';
+
 import 'package:shopzen/features/main/presentation/view/widgets/custom_main_screen_app_bar.dart';
 
-import '../../../../core/routes/route_name.dart';
 import 'widgets/bottom_nav_bar.dart';
 import 'widgets/main_screen_view_body.dart';
 

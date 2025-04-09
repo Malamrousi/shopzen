@@ -62,6 +62,8 @@ class Assets {
 
   static const String svgNoNetwork = "assets/svg/no_network.svg";
 
+  static const String svgNotificationIcon = "assets/svg/notification_icon.svg";
+
   static const String svgSucesssvg = "assets/svg/sucesssvg.svg";
 
   static const String translationsArEG = "assets/translations/ar-EG.json";

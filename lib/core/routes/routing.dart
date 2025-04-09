@@ -17,6 +17,8 @@ import 'package:shopzen/features/map/presentation/view/location_screen.dart';
 import 'package:shopzen/features/on_boarding/presentation/view/on_boarding_screen.dart';
 import 'package:shopzen/features/product_details/presentation/view/product_details.dart';
 
+import '../../features/notification/presentation/view/notification_screen.dart';
+
 Route<dynamic> generateRoute(RouteSettings settings) {
   final argument = settings.arguments;
   switch (settings.name) {
@@ -73,7 +75,10 @@ Route<dynamic> generateRoute(RouteSettings settings) {
           productId: argument as int,
         ),
       );
-      
+    case RouteName.notification:
+      return BaseRoute(
+        page: NotificationScreen(),
+      );
     default:
       return MaterialPageRoute(builder: (_) => PageUnderBuildScreen());
   }

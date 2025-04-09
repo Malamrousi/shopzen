@@ -18,7 +18,6 @@ import 'package:shopzen/features/main/presentation/bloc/main_cubit/main_cubit_cu
 import 'package:shopzen/features/product_details/data/data_source/product_details_data_source.dart';
 import 'package:shopzen/features/product_details/data/repo/product_details_repo.dart';
 import 'package:shopzen/features/product_details/presentation/bloc/product_details/product_details_bloc.dart';
-import 'package:shopzen/features/product_details/presentation/view/product_details.dart';
 import 'package:shopzen/features/profile/data/data_source/profile_data_source.dart';
 
 import '../../features/home/data/data_source/category_data_source.dart';

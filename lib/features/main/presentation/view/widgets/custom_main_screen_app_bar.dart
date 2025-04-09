@@ -9,6 +9,7 @@ import '../../../../../core/animations/animate_do.dart';
 import '../../../../../core/utils/nav_bar_enum.dart';
 import '../../bloc/main_cubit/main_cubit_cubit.dart';
 
+import 'notification_bar_icon.dart';  
 class CustomMainScreenAppBar extends StatelessWidget
     implements PreferredSizeWidget {
   const CustomMainScreenAppBar({super.key});
@@ -45,13 +46,7 @@ class CustomMainScreenAppBar extends StatelessWidget
               CustomFadeInLeft(
                 duration: 800,
                 child: Center(
-                  child: IconButton(
-                      onPressed: () {},
-                      icon: Icon(
-                        Icons.notifications_none_rounded,
-                        color: context.colorThemeExtension.textColor,
-                        size: 26.sp,
-                      )),
+                  child: NotificationBarIcon(),
                 ),
               )
             ],
