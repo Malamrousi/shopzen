@@ -1,5 +1,8 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dio/dio.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
+import 'package:shopzen/core/utils/app_string.dart';
 import 'package:shopzen/features/auth/data/models/login_response_model.dart';
 import 'package:shopzen/features/auth/data/models/sign_up_request_model.dart';
 import 'package:shopzen/features/auth/data/models/user_role_model.dart';
@@ -16,9 +19,10 @@ class AuthDataSource {
   });
 
   //Login
-  Future<LoginResponseModel> login({required LoginRequestBodyModel loginRequestBodyModel}) async {
-    final response =
-        await apiService.login(AuthQueries().loginMapQuery(body: loginRequestBodyModel));
+  Future<LoginResponseModel> login(
+      {required LoginRequestBodyModel loginRequestBodyModel}) async {
+    final response = await apiService
+        .login(AuthQueries().loginMapQuery(body: loginRequestBodyModel));
     return response;
   }
 
@@ -34,7 +38,13 @@ class AuthDataSource {
 
   //signUp
   Future<SignUpResponseModel> signUp({required SignUpRequestModel body}) async {
-    final response = await apiService.signup(AuthQueries().signUpMapQuery(body: body));
+    final response =
+        await apiService.signup(AuthQueries().signUpMapQuery(body: body));
     return response;
+  }
+
+  Future<void> addUserIdToFirebase({required String userId}) async {
+    await FirebaseFirestore.instance.collection(userCollection).doc(userId).set({});
+       
   }
 }

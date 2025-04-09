@@ -41,6 +41,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
           SecureStorageKeys.accessToken,
           loginData.data.login.accessToken ?? "");
       log("Token ${loginData.data.login.accessToken}");
+      await repo.addUserIdToFirebase(userId: userRole.userId.toString());
       emit(AuthState.success(userRole: userRole.userRole ?? ""));
     }, failure: (error) {
       emit(AuthState.failure(failureMessage: error));
