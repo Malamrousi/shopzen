@@ -8,6 +8,7 @@ import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:shopzen/core/app/bloc_observer.dart';
 import 'package:shopzen/core/app/env_variables.dart';
 import 'package:shopzen/core/di/di.dart';
+import 'package:shopzen/core/dynamic_link/dynamic_link.dart';
 import 'package:shopzen/core/notification/firebase_cloud%20_messaging.dart';
 import 'package:shopzen/core/notification/local_notifications.dart';
 import 'package:shopzen/core/secure_storage/secure_storage_service.dart';
@@ -23,20 +24,20 @@ void main() async {
   Platform.isAndroid
       ? await Firebase.initializeApp(
           options: DefaultFirebaseOptions.currentPlatform,
-        ).whenComplete(()  {
-           FirebaseCloudMessaging().init();
-           LocalNotifications.initializeNotifications();
+        ).whenComplete(() {
+          FirebaseCloudMessaging().init();
+          LocalNotifications.initializeNotifications();
         })
-      : await Firebase.initializeApp().whenComplete(()  {
-  FirebaseCloudMessaging().init();
-           LocalNotifications.initializeNotifications();
-      });
+      : await Firebase.initializeApp().whenComplete(() {
+          FirebaseCloudMessaging().init();
+          LocalNotifications.initializeNotifications();
+        });
   ;
   await SharedPref().instantiatePreferences();
   await FirebaseCloudMessaging().init();
   await SecureStorageService().instantiateSecureStorage();
   await LocalNotifications.initializeNotifications();
-
+  await DynamicLink().initDynamicLink();
   Bloc.observer = AppBlocObserver();
 
   setupDependencies();
