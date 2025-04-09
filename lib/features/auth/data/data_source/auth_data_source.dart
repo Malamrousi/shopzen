@@ -1,6 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dio/dio.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
 import 'package:shopzen/core/utils/app_string.dart';
 import 'package:shopzen/features/auth/data/models/login_response_model.dart';
@@ -44,7 +43,7 @@ class AuthDataSource {
   }
 
   Future<void> addUserIdToFirebase({required String userId}) async {
-    await FirebaseFirestore.instance.collection(userCollection).doc(userId).set({});
+await FirebaseFirestore.instance.collection(userCollection).doc(userId).set({});
        
   }
 }
