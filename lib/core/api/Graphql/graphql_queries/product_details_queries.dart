@@ -16,6 +16,7 @@ class ProductDetailsQueries {
             price
             images
             description
+            id
           }
         },
   

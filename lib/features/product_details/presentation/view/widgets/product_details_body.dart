@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shopzen/features/product_details/data/models/product_details_model.dart';
 
+import '../../../../../core/cubit/share/share_cubit.dart';
 import '../../../../../core/helper/spacing.dart';
+import '../../../../../core/utils/styles/colors_manger.dart';
 import '../../../../../core/utils/styles/test_styles.dart';
 import '../../../../../core/widgets/custom_favorite_icon.dart';
 import '../../../../../core/widgets/custom_share_icon.dart';
@@ -24,7 +27,44 @@ class ProductDetailsBody extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                CustomShareIcon(),
+                BlocBuilder<ShareCubit, ShareState>(
+                  builder: (context, state) {
+                    return state.when(initial: () {
+                      return CustomShareIcon(onTap: () {
+                        context.read<ShareCubit>().sendDynamicLink(
+                            productDescription: productDetailsModel.description ?? "",
+                            productImage: productDetailsModel.images.first ,
+                            productTitle: productDetailsModel.title ?? "",
+                            productId: int.parse(productDetailsModel.id ?? "0"));
+                      });
+                    }, loading: (int id) {
+                      if (id == productDetailsModel.id) {
+                        return Padding(
+                          padding: EdgeInsets.only(left: 10.w),
+                          child: SizedBox(
+                            height: 20.h,
+                            width: 20.w,
+                            child: CircularProgressIndicator(
+                              color: ColorsManger.primaryColor400,
+                            ),
+                          )
+                        );
+                      }else{
+                     return  CustomShareIcon(
+                          onTap: () {},
+                        );
+                      }
+                    }, success: () {
+                      return CustomShareIcon(onTap: () {
+                        context.read<ShareCubit>().sendDynamicLink(
+                          productDescription: productDetailsModel.description ?? "",
+                            productImage: productDetailsModel.images.first ,
+                            productTitle: productDetailsModel.title ?? "",
+                            productId: int.parse(productDetailsModel.id ?? "0"));
+                      });
+                    });
+                  },
+                ),
                 CustomFavoriteIcon(),
               ],
             ),

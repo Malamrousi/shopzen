@@ -5,6 +5,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:shopzen/core/cubit/app_cubit/app_cubit.dart';
 import 'package:shopzen/core/api/api_services.dart';
 import 'package:shopzen/core/api/dio_factory.dart';
+import 'package:shopzen/core/cubit/share/share_cubit.dart';
 import 'package:shopzen/core/cubit/upload_image/upload_image_cubit.dart';
 import 'package:shopzen/core/upload/data_source/upload_image_data_source.dart';
 import 'package:shopzen/core/upload/repo/upload_image_repo.dart';
@@ -92,13 +93,14 @@ Future<void> setupDependencies() async {
   getIt.registerFactory<GetAllProductsBloc>(
       () => GetAllProductsBloc(productRepo: getIt.get<ProductRepo>()));
 
-        getIt.registerLazySingleton<ProductDetailsDataSource>(
-    () => ProductDetailsDataSource(apiService:  getIt.get<ApiService>()),
+  getIt.registerLazySingleton<ProductDetailsDataSource>(
+    () => ProductDetailsDataSource(apiService: getIt.get<ApiService>()),
   );
-    getIt.registerLazySingleton<ProductDetailsRepo>(
-    () => ProductDetailsRepo(productDetailsDataSource: getIt.get<ProductDetailsDataSource>()),
+  getIt.registerLazySingleton<ProductDetailsRepo>(
+    () => ProductDetailsRepo(
+        productDetailsDataSource: getIt.get<ProductDetailsDataSource>()),
   );
-  getIt.registerFactory<ProductDetailsBloc>(
-      () => ProductDetailsBloc(productDetailsRepo: getIt.get<ProductDetailsRepo>()));
-
+  getIt.registerFactory<ProductDetailsBloc>(() =>
+      ProductDetailsBloc(productDetailsRepo: getIt.get<ProductDetailsRepo>()));
+  getIt.registerFactory<ShareCubit>(() => ShareCubit());
 }
