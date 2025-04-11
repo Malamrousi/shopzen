@@ -5,6 +5,7 @@ import 'package:shopzen/core/app/app_localizations.dart';
 
 import 'package:shopzen/core/cubit/app_cubit/app_cubit.dart';
 import 'package:shopzen/core/app/connectivity_controller.dart';
+import 'package:shopzen/core/cubit/share/share_cubit.dart';
 
 import 'package:shopzen/core/di/di.dart';
 import 'package:shopzen/core/routes/route_name.dart';
@@ -24,12 +25,19 @@ class ShopZenApp extends StatelessWidget {
       valueListenable: ConnectivityController.instance.isConnected,
       builder: (_, value, __) {
         if (value) {
-          return BlocProvider(
-            create: (context) => getIt.get<AppCubit>()
-              ..changeAppThemeMode(
-                sharedMode: SharedPref().getBoolean(PrefKeys.themeMode),
-              )
-              ..getSavedLanguage(),
+          return MultiBlocProvider(
+            providers: [
+              BlocProvider(
+                create: (context) => getIt.get<AppCubit>()
+                  ..changeAppThemeMode(
+                    sharedMode: SharedPref().getBoolean(PrefKeys.themeMode),
+                  )
+                  ..getSavedLanguage(),
+              ),
+              BlocProvider(
+                create: (context) => getIt.get<ShareCubit>(),
+              ),
+            ],
             child: ScreenUtilInit(
               designSize: const Size(375, 812),
               minTextAdapt: true,
@@ -60,13 +68,12 @@ class ShopZenApp extends StatelessWidget {
                         ),
                       );
                     },
-                    
                     navigatorKey: getIt.get<GlobalKey<NavigatorState>>(),
                     onGenerateRoute: generateRoute,
                     initialRoute:
-                      SharedPref().getString(PrefKeys.isLogin) == "true" ?
-                             RouteName.main
-                        : RouteName.onBoarding,
+                        SharedPref().getString(PrefKeys.isLogin) == "true"
+                            ? RouteName.main
+                            : RouteName.onBoarding,
                     localeResolutionCallback: (deviceLocale, supportedLocales) {
                       if (deviceLocale != null) {
                         for (var locale in supportedLocales) {

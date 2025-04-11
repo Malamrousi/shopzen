@@ -32,7 +32,8 @@ class ProductDetailsModel {
   final double? price;
   final List<String> images;
   final String? description;
-  ProductDetailsModel({
+  final String? id;
+  ProductDetailsModel(this.id, {
     required this.title,
     required this.price,
     required this.description,
