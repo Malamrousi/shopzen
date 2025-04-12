@@ -9,7 +9,7 @@ import 'package:shopzen/core/cubit/share/share_cubit.dart';
 import 'package:shopzen/core/cubit/upload_image/upload_image_cubit.dart';
 import 'package:shopzen/core/upload/data_source/upload_image_data_source.dart';
 import 'package:shopzen/core/upload/repo/upload_image_repo.dart';
-import 'package:shopzen/core/utils/location_serviCe.dart';
+import 'package:shopzen/core/utils/location_service.dart';
 import 'package:shopzen/features/auth/data/data_source/auth_data_source.dart';
 import 'package:shopzen/features/auth/data/repo/auth_repo.dart';
 import 'package:shopzen/features/auth/presentation/bloc/auth_bloc/auth_bloc.dart';
