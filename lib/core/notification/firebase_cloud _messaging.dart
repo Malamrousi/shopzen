@@ -1,11 +1,11 @@
 import 'dart:developer' as dev;
 import 'package:firebase_messaging/firebase_messaging.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:shopzen/core/app/app_localizations.dart';
-import 'package:shopzen/core/notification/firebase_messaging_navIGator.dart';
 import 'package:shopzen/core/utils/show_toast.dart';
+
+import 'firebase_messaging_navigator.dart';
 
 class FirebaseCloudMessaging {
   FirebaseCloudMessaging._();
