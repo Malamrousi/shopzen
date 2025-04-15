@@ -19,7 +19,7 @@ import 'package:shopzen/shop_zen_app.dart';
 void main() async {
   await EnvVariables.instance.init(type: EnvType.dev);
   WidgetsFlutterBinding.ensureInitialized();
-  await dotenv.load(fileName: ".env");
+  // await dotenv.load(fileName: ".env");
 
   Platform.isAndroid
       ? await Firebase.initializeApp(
