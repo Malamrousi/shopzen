@@ -35,7 +35,7 @@ class BottomNavBar extends StatelessWidget {
                     builder: (context, state) {
                       final cubit = context.read<MainCubit>();
                       return Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           //Home Screen
                           IconTapNavBar(
@@ -45,6 +45,15 @@ class BottomNavBar extends StatelessWidget {
                               cubit.selectedNavBarIcons(NavBarEnum.home);
                             },
                             title: "home".tr(context),
+                          ),
+//Search
+                            IconTapNavBar(
+                            image: Assets.svgSearchBottomNavBar,
+                            isSelected: cubit.navBarEnum == NavBarEnum.search,
+                            onTap: () {
+                              cubit.selectedNavBarIcons(NavBarEnum.search);
+                            },
+                            title: "search".tr(context),
                           ),
                         
                           IconTapNavBar(

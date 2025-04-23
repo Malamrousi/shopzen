@@ -69,6 +69,14 @@
      "cart":"السلة",
      "home":"الرئيسية",
      "account":"الحساب",
-     "favorites":"المفضلة"
+     "favorites":"المفضلة",
+     "search_for_products":"ابحث عن المنتجات",
+     "search_name":"البحث بالاسم",
+     "search_price":"البحث بالسعر",
+     "search_for_product_name":"ابحث عن المنتج بالاسم",
+     "price_min":"السعر الادنى",
+     "price_max":"السعر الاقصى",
+     "save":"حفظ",
+     "search":"بحث"
  
 }

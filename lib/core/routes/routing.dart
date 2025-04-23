@@ -16,6 +16,7 @@ import 'package:shopzen/features/map/presentation/view/google_map_screen.dart';
 import 'package:shopzen/features/map/presentation/view/location_screen.dart';
 import 'package:shopzen/features/on_boarding/presentation/view/on_boarding_screen.dart';
 import 'package:shopzen/features/product_details/presentation/view/product_details.dart';
+import 'package:shopzen/features/search/presentation/view/search_screen.dart';
 
 import '../../features/notification/presentation/view/notification_screen.dart';
 
@@ -78,6 +79,10 @@ Route<dynamic> generateRoute(RouteSettings settings) {
     case RouteName.notification:
       return BaseRoute(
         page: NotificationScreen(),
+      );
+       case RouteName.search:
+      return BaseRoute(
+        page: SearchScreen(),
       );
     default:
       return MaterialPageRoute(builder: (_) => PageUnderBuildScreen());

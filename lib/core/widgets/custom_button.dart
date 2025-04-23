@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shopzen/core/utils/styles/colors_manger.dart';
+import 'package:shopzen/core/utils/styles/test_styles.dart';
 
 class CustomButton extends StatelessWidget {
   const CustomButton(
@@ -41,7 +42,7 @@ class CustomButton extends StatelessWidget {
       onPressed: onPressed,
       child: Text(
         title,
-        style: textStyle,
+        style: textStyle ?? AppTestStyles.font16BoldWhiteColor(context),
       ),
     );
   }

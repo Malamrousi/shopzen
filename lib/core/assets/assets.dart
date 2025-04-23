@@ -64,13 +64,15 @@ class Assets {
 
   static const String svgFavoritesBottomNavBar = "assets/svg/favorites_bottom_nav_bar.svg";
 
-  static const String svgHomeBottomNavBar = "assets/svg/home_bottom_nav_barsvg.svg";
+  static const String svgHomeBottomNavBar = "assets/svg/home_bottom_nav_bar.svg";
 
   static const String svgLocation = "assets/svg/location.svg";
 
   static const String svgNoNetwork = "assets/svg/no_network.svg";
 
   static const String svgNotificationIcon = "assets/svg/notification_icon.svg";
+
+  static const String svgSearchBottomNavBar = "assets/svg/search_bottom_nav_bar.svg";
 
   static const String svgSucesssvg = "assets/svg/sucesssvg.svg";
 

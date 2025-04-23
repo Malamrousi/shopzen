@@ -9,6 +9,7 @@ class RouteName {
   static const String webView = "/webView";
   static const String productDetails = "/productDetails";
   static const String notification = "/notification";
+  static const String search = "/search";
   
   
 }
