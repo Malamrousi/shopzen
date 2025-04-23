@@ -50,13 +50,21 @@ class Assets {
 
   static const String map_stylesLightMapStyles = "assets/map_styles/light_map_styles.json";
 
+  static const String svgAccountBottomNavBar = "assets/svg/account_bottom_nav_bar.svg";
+
   static const String svgAddSucess = "assets/svg/add_sucess.png";
 
   static const String svgArrow = "assets/svg/arrow.svg";
 
   static const String svgBell = "assets/svg/bell.svg";
 
+  static const String svgCartBottomNavBar = "assets/svg/cart_bottom_nav_bar.svg";
+
   static const String svgFavorite = "assets/svg/favorite.svg";
+
+  static const String svgFavoritesBottomNavBar = "assets/svg/favorites_bottom_nav_bar.svg";
+
+  static const String svgHomeBottomNavBar = "assets/svg/home_bottom_nav_barsvg.svg";
 
   static const String svgLocation = "assets/svg/location.svg";
 

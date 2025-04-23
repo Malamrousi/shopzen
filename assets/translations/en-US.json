@@ -65,6 +65,9 @@
     "products":"Products",
     "no_products":"No Products",
     "add_to_cart":"Add to Cart",
-    "cart":"Cart"
+    "cart":"Cart",
+    "home":"Home",
+    "account":"Account",
+    "favorites":"Favorites"
 
 }

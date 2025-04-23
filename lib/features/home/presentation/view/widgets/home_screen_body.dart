@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shopzen/core/helper/spacing.dart';
 import 'package:shopzen/features/home/presentation/view/widgets/banners_slider.dart';
 import 'package:shopzen/features/home/presentation/view/widgets/categories_text.dart';
+import 'package:shopzen/features/home/presentation/view/widgets/text_search_filed.dart';
 
 import 'categories_list.dart';
 import 'products_grid_list.dart';
@@ -20,7 +21,10 @@ class HomeScreenBody extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                verticalSpacing(30.h),
+                                verticalSpacing(30.h),
+
+                TextSearchFiled(),
+                verticalSpacing(10.h),
                 CategoriesText(),
                 verticalSpacing(5.h),
                 CategoriesList(),

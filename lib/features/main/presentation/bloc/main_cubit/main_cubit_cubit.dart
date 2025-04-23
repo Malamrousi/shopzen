@@ -19,8 +19,6 @@ class MainCubit extends Cubit<MainState> {
       navBarEnum = NavBarEnum.cart;
     } else if (viewEnum == NavBarEnum.profile) {
       navBarEnum = NavBarEnum.profile;
-    }else if(viewEnum == NavBarEnum.search){
-      navBarEnum = NavBarEnum.search;
     }
     
     emit(MainState.barSeletedIcons(navBarEnum: navBarEnum));
