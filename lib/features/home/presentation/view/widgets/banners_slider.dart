@@ -23,6 +23,7 @@ class _BannersSliderState extends State<BannersSlider> {
     "assets/images/banner_6.jpg",
     "assets/images/banner_7.jpg",
   ];
+  
   @override
   Widget build(BuildContext context) {
     return Column(

@@ -19,6 +19,7 @@ class AppTextFormFiled extends StatelessWidget {
       this.suffixIcon,
       this.fillColor,
       this.controller,
+      this.keyboardType,
       required this.validator, this.prefixIcon});
   final EdgeInsetsGeometry? contentPadding;
   final InputBorder? focusedBorder;
@@ -32,11 +33,13 @@ class AppTextFormFiled extends StatelessWidget {
   final Color? fillColor;
   final TextEditingController? controller;
   final Function(String? value) validator;
+  final TextInputType? keyboardType;
 
   @override
   Widget build(BuildContext context) {
     bool isDark = SharedPref().getBoolean(PrefKeys.themeMode) ?? false;
     return TextFormField(
+      keyboardType: keyboardType,
       controller: controller,
       validator: (value) {
         return validator(value);

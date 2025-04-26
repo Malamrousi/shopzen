@@ -20,6 +20,9 @@ import 'package:shopzen/features/product_details/data/data_source/product_detail
 import 'package:shopzen/features/product_details/data/repo/product_details_repo.dart';
 import 'package:shopzen/features/product_details/presentation/bloc/product_details/product_details_bloc.dart';
 import 'package:shopzen/features/profile/data/data_source/profile_data_source.dart';
+import 'package:shopzen/features/search/data/data_source/search_data_source.dart';
+import 'package:shopzen/features/search/data/repo/search_repo.dart';
+import 'package:shopzen/features/search/presentation/bloc/search_bloc/search_bloc.dart';
 
 import '../../features/home/data/data_source/category_data_source.dart';
 import '../../features/home/data/repo/category_repo.dart';
@@ -103,4 +106,12 @@ Future<void> setupDependencies() async {
   getIt.registerFactory<ProductDetailsBloc>(() =>
       ProductDetailsBloc(productDetailsRepo: getIt.get<ProductDetailsRepo>()));
   getIt.registerFactory<ShareCubit>(() => ShareCubit());
+    getIt.registerLazySingleton<SearchDataSource>(
+    () => SearchDataSource(apiService: getIt.get<ApiService>()),
+  );
+    getIt.registerLazySingleton<SearchRepo>(
+    () => SearchRepo(searchDataSource: getIt.get<SearchDataSource>()),
+  );
+    getIt.registerFactory<SearchBloc>(
+      () => SearchBloc(searchRepo: getIt.get<SearchRepo>()));
 }

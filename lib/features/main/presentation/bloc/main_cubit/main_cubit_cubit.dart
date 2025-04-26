@@ -13,14 +13,15 @@ class MainCubit extends Cubit<MainState> {
   void selectedNavBarIcons(NavBarEnum viewEnum) {
     if (viewEnum == NavBarEnum.home) {
       navBarEnum = NavBarEnum.home;
+    }
+     else if (viewEnum == NavBarEnum.search) {
+      navBarEnum = NavBarEnum.search;
     } else if (viewEnum == NavBarEnum.favorites) {
       navBarEnum = NavBarEnum.favorites;
     } else if (viewEnum == NavBarEnum.cart) {
       navBarEnum = NavBarEnum.cart;
     } else if (viewEnum == NavBarEnum.profile) {
       navBarEnum = NavBarEnum.profile;
-    }else if(viewEnum == NavBarEnum.search){
-      navBarEnum = NavBarEnum.search;
     }
     
     emit(MainState.barSeletedIcons(navBarEnum: navBarEnum));

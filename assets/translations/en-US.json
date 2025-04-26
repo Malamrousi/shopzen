@@ -65,6 +65,17 @@
     "products":"Products",
     "no_products":"No Products",
     "add_to_cart":"Add to Cart",
-    "cart":"Cart"
-
+    "cart":"Cart",
+    "home":"Home",
+    "account":"Account",
+    "favorites":"Favorites",
+    "search_for_products":"Search for products",
+    "search_name":"Search Name",
+    "search_price":"Search Price",
+    "search_for_product_name":"Search for product name",
+    "price_min":"Price Min",
+    "price_max":"Price Max",
+    "save":"Save",
+ "search":"Search",
+ "no_products_found":"No products found"
 }

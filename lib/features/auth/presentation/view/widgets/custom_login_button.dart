@@ -13,6 +13,9 @@ import 'package:shopzen/core/widgets/custom_button.dart';
 import 'package:shopzen/features/auth/presentation/bloc/auth_bloc/auth_bloc.dart';
 import 'package:shopzen/features/on_boarding/presentation/view/widgets/custom_linear_button.dart';
 
+import '../../../../../core/shared_pref/shared_pref.dart';
+import '../../../../../core/shared_pref/shared_prefs_key.dart';
+
 class CustomLoginButton extends StatelessWidget {
   const CustomLoginButton({super.key});
 
@@ -32,14 +35,14 @@ class CustomLoginButton extends StatelessWidget {
                 seconds: 2,
               );
             } else {
-          //     SharedPref().setString(PrefKeys.isLogin, "true");
-          //       final location = await SharedPref().getString(PrefKeys.location);
-          //  if(location==null){
-          //    context.pushNamed(RouteName.location);
-          //  }else{
+              SharedPref().setString(PrefKeys.isLogin, "true");
+                final location = await SharedPref().getString(PrefKeys.location);
+           if(location==null){
+             context.pushNamed(RouteName.location);
+           }else{
               context.pushNamed(RouteName.main);
 
-          //  }
+           }
             }
           },
           failure: (message) {

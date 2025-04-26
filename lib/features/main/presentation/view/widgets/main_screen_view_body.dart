@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:shopzen/features/search/presentation/view/search_screen.dart';
 import '../../../../cart/presentation/view/cart_screen.dart';
-import '../../../../search/presentation/view/search_screen.dart';
 
 import '../../../../../core/utils/nav_bar_enum.dart';
 import '../../../../favorites/presentation/view/favorites_screen.dart';
@@ -22,11 +22,12 @@ class MainScreenViewBody extends StatelessWidget {
               final cubit = context.read<MainCubit>();
               if (cubit.navBarEnum == NavBarEnum.favorites) {
                 return const FavoritesScreen();
+              }  else if (cubit.navBarEnum == NavBarEnum.profile) {
+                return const ProfileScreen();
               } else if (cubit.navBarEnum == NavBarEnum.search) {
                 return const SearchScreen();
-              } else if (cubit.navBarEnum == NavBarEnum.profile) {
-                return const ProfileScreen();
-              } else if (cubit.navBarEnum == NavBarEnum.cart) {
+              }
+              else if (cubit.navBarEnum == NavBarEnum.cart) {
                 return const CartScreen();
               }
               return const HomeScreen();
