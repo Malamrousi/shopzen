@@ -1,12 +1,14 @@
-
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shopzen/core/app/app_localizations.dart';
 import 'package:shopzen/core/widgets/app_text_form_filed.dart';
+import 'package:shopzen/features/search/data/model/search_request_body.dart';
 import 'package:shopzen/features/search/presentation/view/widgets/search_for_data_icon.dart';
 
 import '../../../../../core/animations/animate_do.dart';
 import '../../../../../core/utils/filter_button_enum.dart';
+import '../../bloc/search_bloc/search_bloc.dart';
 import 'save_filter_button.dart';
 import 'search_name_price_button.dart';
 
@@ -21,6 +23,18 @@ class _FilterButtonsState extends State<FilterButtons> {
   FilterButtonsEnum searchEnum = FilterButtonsEnum.non;
 
   final fromKey = GlobalKey<FormState>();
+  final TextEditingController textEditingController = TextEditingController();
+  final TextEditingController priceCMinController = TextEditingController();
+  final TextEditingController priceCMaxController = TextEditingController();
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
+    textEditingController.dispose();
+    priceCMinController.dispose();
+    priceCMaxController.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Form(
@@ -43,7 +57,6 @@ class _FilterButtonsState extends State<FilterButtons> {
                 duration: 200,
                 child: SearchNamePriceButton(
                   title: 'search_price'.tr(context),
-
                   isSelected: searchEnum == FilterButtonsEnum.price,
                   onTap: priceSearchTap,
                 ),
@@ -56,7 +69,7 @@ class _FilterButtonsState extends State<FilterButtons> {
             CustomFadeInDown(
               duration: 200,
               child: AppTextFormFiled(
-                controller: TextEditingController(),
+                controller: textEditingController,
                 hintText: 'search_for_product_name'.tr(context),
                 validator: (value) {
                   if (value == null || value.isEmpty) {
@@ -67,7 +80,14 @@ class _FilterButtonsState extends State<FilterButtons> {
               ),
             ),
             SaveFilterButton(
-              onTap: () {},
+              onTap: () {
+                  context.read<SearchBloc>().add(SearchEvent.searchForProduct(
+                body: SearchRequestBody(
+              searchProductName: textEditingController.text.trim(),
+              priceMin: null,
+              priceMax: null,
+            )));
+              },
             ),
           ] else if (searchEnum == FilterButtonsEnum.price) ...[
             // Search Price
@@ -79,7 +99,7 @@ class _FilterButtonsState extends State<FilterButtons> {
                   child: SizedBox(
                     width: 160.w,
                     child: AppTextFormFiled(
-                      controller: TextEditingController(),
+                      controller: priceCMinController,
                       keyboardType: TextInputType.number,
                       hintText: 'price_min'.tr(context),
                       validator: (value) {
@@ -96,7 +116,7 @@ class _FilterButtonsState extends State<FilterButtons> {
                   child: SizedBox(
                     width: 160.w,
                     child: AppTextFormFiled(
-                      controller: TextEditingController(),
+                      controller: priceCMaxController,
                       keyboardType: TextInputType.number,
                       hintText: 'price_max'.tr(context),
                       validator: (value) {
@@ -111,7 +131,16 @@ class _FilterButtonsState extends State<FilterButtons> {
               ],
             ),
             SaveFilterButton(
-              onTap: () {},
+              onTap: () {
+                if(fromKey.currentState!.validate()){
+                       context.read<SearchBloc>().add(SearchEvent.searchForProduct(
+                body: SearchRequestBody(
+              searchProductName: null,
+              priceMin: int.parse(priceCMinController.text.trim()),
+              priceMax: int.parse(priceCMaxController.text.trim()),
+            )));
+                }
+              },
             ),
           ],
 
@@ -128,25 +157,28 @@ class _FilterButtonsState extends State<FilterButtons> {
     if (searchEnum == FilterButtonsEnum.name) {
       setState(() {
         searchEnum = FilterButtonsEnum.non;
-        //call api
+     
       });
     } else {
       setState(() {
         searchEnum = FilterButtonsEnum.name;
       });
     }
+    textEditingController.clear();
   }
 
   void priceSearchTap() {
     if (searchEnum == FilterButtonsEnum.price) {
       setState(() {
         searchEnum = FilterButtonsEnum.non;
-        //call api
+   
       });
     } else {
       setState(() {
         searchEnum = FilterButtonsEnum.price;
       });
     }
+    priceCMaxController.clear();
+    priceCMinController.clear();
   }
 }

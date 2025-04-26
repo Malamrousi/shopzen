@@ -77,6 +77,7 @@
      "price_min":"السعر الادنى",
      "price_max":"السعر الاقصى",
      "save":"حفظ",
-     "search":"بحث"
+     "search":"بحث",
+     "no_products_found":"لا يوجد منتجات"
  
 }

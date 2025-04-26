@@ -76,5 +76,6 @@
     "price_min":"Price Min",
     "price_max":"Price Max",
     "save":"Save",
- "search":"Search"
+ "search":"Search",
+ "no_products_found":"No products found"
 }
